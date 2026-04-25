@@ -1,0 +1,35 @@
+.full-content {
+	@apply flex w-full min-w-0 grow flex-col;
+}
+
+.container {
+	@apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.menu a {
+	@apply text-foreground hover:text-white;
+}
+
+.sub-menu a {
+	@apply hover:text-primary;
+}
+
+.nav-menu a {
+	@apply relative text-[0.78rem] tracking-[0.16em] text-white/60 uppercase no-underline transition-colors duration-200;
+}
+
+.nav-menu a::after {
+	@apply bg-primary absolute -bottom-[3px] left-0 h-[1px] w-0 transition-all duration-300 content-[''];
+}
+
+.nav-menu a:hover::after {
+	@apply w-full;
+}
+
+.ms-btn-action a {
+	@apply border-primary text-primary hover:bg-primary border px-5 py-2 text-[0.75rem] font-semibold tracking-[0.14em] no-underline transition-all duration-250 after:hidden hover:text-black;
+}
+
+.header-scrolled {
+	@apply bg-[rgba(13,13,13,0.93)] ring-1 ring-white/10 backdrop-blur-[14px];
+}

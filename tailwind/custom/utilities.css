@@ -1,0 +1,60 @@
+/**
+ * Custom styles to immediately follow Tailwind’s `utilities` layer
+ *
+ * Add your own utility classes to this theme. Complex utility classes should
+ * be added using Tailwind’s plugin system:
+ *
+ */
+
+/* Diagonal stripe texture */
+.stripe-texture {
+	background-image: repeating-linear-gradient(
+		-60deg,
+		transparent,
+		transparent 22px,
+		rgba(255, 255, 255, 0.022) 22px,
+		rgba(255, 255, 255, 0.022) 23px
+	);
+}
+
+/* Hero inset shadow */
+.shadow-hero {
+	box-shadow:
+		inset 120px 100px 250px #000,
+		inset -120px -100px 250px #000;
+}
+.shadow-hero-sm {
+	box-shadow:
+		inset 60px 60px 160px #000,
+		inset -60px -60px 160px #000;
+}
+
+/* ── Keyframe animations ── */
+@keyframes scrollPulse {
+	0%,
+	100% {
+		opacity: 0.35;
+	}
+	50% {
+		opacity: 0.8;
+	}
+}
+@keyframes waveBars {
+	0%,
+	100% {
+		transform: scaleY(0.4);
+	}
+	50% {
+		transform: scaleY(1);
+	}
+}
+@keyframes revealUp {
+	from {
+		opacity: 0;
+		transform: translateY(28px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

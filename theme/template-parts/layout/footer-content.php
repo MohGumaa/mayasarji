@@ -1,0 +1,31 @@
+<?php
+/**
+ * Template part for displaying the footer content
+ *
+ * @package mayasarji
+ */
+?>
+
+<footer id="colophon" class="stripe-texture border-t border-white/6 stripe-texture overflow-hidden py-9">
+	<div class="container">
+		<div class="flex flex-col md:flex-row items-center justify-between gap-2 text-sm text-foreground">
+			<p class="text-center md:text-left">
+				&copy; <?php echo date('Y');?> 
+				<span class="text-primary">
+					<?php echo esc_html(get_bloginfo('name'));?>
+				</span>. 
+				<?php esc_html_e('All rights reserved.®', 'mayasarji');?>
+			</p>
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'menu-2',
+					'menu_id'        => 'footer-menu',
+					'menu_class'     => 'flex flex-wrap items-center max-lg:justify-center gap-x-5 gap-y-3 sub-menu',
+					'items_wrap'     => '<ul id="%1$s" class="%2$s" aria-label="submenu">%3$s</ul>',
+				)
+			);
+			?>
+		</div>
+	</div>
+</footer>
