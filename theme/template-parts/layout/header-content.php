@@ -10,7 +10,7 @@
 	<div class="container flex items-center justify-between h-full">
 
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="font-bold text-[1.35rem] tracking-[0.12em] uppercase text-white">
-			<?php bloginfo( 'name' ); ?><span class="text-primary">.</span>
+			<?php bloginfo( 'name' ); ?><span class="text-sky-400">.</span>
 		</a>
 
 		<nav id="site-navigation" class="hidden md:block" aria-label="<?php esc_attr_e( 'Main Navigation', 'mayasarji' ); ?>">

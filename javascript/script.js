@@ -45,6 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add overflow to HTML element
     html.classList.toggle('overflow-hidden');
 
+    // Recalculate height when menu is toggled
+    // if (window.innerWidth < 1024) {
+    //   updateNavHeight();
+    // }
   }
 
   // Header scroll glass effect

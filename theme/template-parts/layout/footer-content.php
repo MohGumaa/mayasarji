@@ -11,7 +11,7 @@
 		<div class="flex flex-col md:flex-row items-center justify-between gap-2 text-sm text-foreground">
 			<p class="text-center md:text-left">
 				&copy; <?php echo date('Y');?> 
-				<span class="text-primary">
+				<span class="text-sky-400">
 					<?php echo esc_html(get_bloginfo('name'));?>
 				</span>. 
 				<?php esc_html_e('All rights reserved.®', 'mayasarji');?>

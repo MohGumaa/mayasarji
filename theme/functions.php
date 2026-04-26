@@ -38,7 +38,7 @@ if ( ! defined( 'MAYASARJI_TYPOGRAPHY_CLASSES' ) ) {
 	 */
 	define(
 		'MAYASARJI_TYPOGRAPHY_CLASSES',
-		'prose prose-neutral max-w-none prose-a:text-primary'
+		'prose prose-foreground max-w-none prose-a:text-primary'
 	);
 }
 
