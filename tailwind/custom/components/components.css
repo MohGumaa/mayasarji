@@ -1,12 +1,9 @@
-.full-content {
-	@apply flex w-full min-w-0 grow flex-col;
-}
-
 .container {
-	@apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+	@apply mx-auto px-3;
 }
 
-.menu a {
+.menu a,
+.nav-menu a {
 	@apply text-foreground hover:text-white;
 }
 
@@ -19,7 +16,7 @@
 }
 
 .nav-menu a::after {
-	@apply bg-primary absolute -bottom-[3px] left-0 h-[1px] w-0 transition-all duration-300 content-[''];
+	@apply bg-primary absolute -bottom-0.75 left-0 h-px w-0 transition-all duration-300 content-[''];
 }
 
 .nav-menu a:hover::after {
@@ -32,4 +29,8 @@
 
 .header-scrolled {
 	@apply bg-[rgba(13,13,13,0.93)] ring-1 ring-white/10 backdrop-blur-[14px];
+}
+
+.nav-open span {
+	@apply w-6 bg-white;
 }
