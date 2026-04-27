@@ -1,7 +1,11 @@
 /* @layer components used for custom reusable components that combine multiple tailwinds classes  */
+.page-body,
+main {
+	@apply flex grow flex-col;
+}
 
 .container {
-	@apply mx-auto px-3;
+	@apply mx-auto max-w-7xl px-3;
 }
 
 .flexCenter {
@@ -48,7 +52,11 @@
 
 .page-title,
 .entry-title {
-	@apply mb-6 text-3xl font-extrabold;
+	@apply mb-6 text-3xl font-bold text-balance;
+}
+
+.page-title-xl {
+	@apply text-4xl sm:text-5xl md:text-6xl;
 }
 
 .search-form {
@@ -65,4 +73,32 @@
 
 .search-submit {
 	@apply rounded-full text-sm;
+}
+
+.article-title {
+	@apply font-medium no-underline group-hover:text-sky-500 hover:text-sky-500;
+}
+
+.article-card p {
+	@apply text-foreground line-clamp-2 text-sm;
+}
+
+.section-banner {
+	@apply relative z-1 w-screen snap-center overflow-x-hidden bg-black bg-cover bg-center bg-no-repeat after:absolute after:top-0 after:left-0 after:h-full after:w-full after:bg-black/80 after:content-[''];
+}
+
+.pagination .nav-links {
+	@apply inline-flex items-center gap-x-1.5;
+}
+
+.pagination .page-numbers {
+	@apply inline-flex h-10 min-w-9 items-center justify-center rounded border border-white/7 bg-transparent p-2.5 text-sm font-medium capitalize no-underline hover:bg-sky-400/15 md:min-w-10 md:px-3;
+}
+
+.pagination .current {
+	@apply border-sky-300/30 bg-sky-400/10 text-sky-400 hover:bg-sky-400/10;
+}
+
+.pagination .dots {
+	@apply bg-transparent hover:bg-transparent;
 }

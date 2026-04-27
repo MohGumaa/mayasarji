@@ -31,4 +31,4 @@
 
 	<?php get_template_part( 'template-parts/layout/header', 'content' ); ?>
 
-	<div id="content" class="flex flex-col grow w-full">
+	<div id="content" class="page-body w-full">

@@ -2,32 +2,36 @@
 /**
  * Template part for displaying post archives and search results
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
  * @package mayasarji
  */
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
 
+$ms_post_id = get_the_ID();
+$ms_title = esc_html(get_the_title());
+$ms_permalink = esc_url(get_permalink());
+$default_img = get_theme_file_uri( 'assets/images/banner-1.webp' );
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-	<header class="entry-header">
-		<?php
-		if ( is_sticky() && is_home() && ! is_paged() ) {
-			printf( '%s', esc_html_x( 'Featured', 'post', 'mayasarji' ) );
-		}
-		the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
-		?>
-	</header><!-- .entry-header -->
-
-	<?php mayasarji_post_thumbnail(); ?>
-
-	<div <?php mayasarji_content_class( 'entry-content' ); ?>>
+<article id="post-<?php echo $ms_post_id; ?>" <?php post_class('border border-white/7 bg-white/[0.02] transition-colors duration-300 overflow-hidden group rounded-md article-card'); ?>>
+	<figure class="overflow-hidden relative">
+		<a href="<?php echo $ms_permalink; ?>" aria-hidden="true" tabindex="-1" class="block w-full h-52 md:h-56 lg:h-48 xl:h-56">
+			<?php if (has_post_thumbnail($ms_post_id)) : ?>
+				<?php the_post_thumbnail('ms-blog-featured', array('class' => 'object-cover w-full h-full rounded')); ?>
+			<?php else : ?>
+				<img width="300" height="180" src="<?php echo $default_img;?>" alt="<?php echo $ms_title; ?>" class="w-full h-full object-cover rounded">
+			<?php endif; ?>
+		</a>
+	</figure>
+	<div class="space-y-2 px-3 py-4">
+		<h2 class="lg:text-lg line-clamp-2 article-title">
+      <a href="<?php echo $ms_permalink; ?>" rel="bookmark">
+        <?php echo $ms_title; ?>
+      </a>
+    </h2>
 		<?php the_excerpt(); ?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php mayasarji_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-
-</article><!-- #post-${ID} -->
+		<time datetime="<?php echo esc_attr( get_the_date( DATE_W3C ) ); ?>" class="text-xs text-tertiary">
+			<?php the_time();?>
+		</time>
+	</div>
+</article>

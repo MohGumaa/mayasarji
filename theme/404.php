@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 ?>
 
-	<main id="primary" class="flex flex-col grow py-16 md:py-20">
+	<main id="primary" class="py-16 md:py-20">
 		<div class="container flexCenter flex-col grow">
 			<svg class="w-60 h-36 sm:w-83 sm:h-49.75 mb-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332 190" fill="none">
 				<g clip-path="url(#clip0_3686_38395)">
@@ -277,7 +277,7 @@ get_header();
 			</svg>
 			<h1 class="page-title capitalize mb-3"><?php esc_html_e( 'Page Not Found', 'mayasarji' ); ?></h1>
 			<div <?php mayasarji_content_class( 'page-content' ); ?>>
-				<p class=""><?php esc_html_e( 'This page could not be found. It might have been removed or renamed, or it may never have existed.', 'mayasarji' ); ?></p>
+				<p><?php esc_html_e( 'This page could not be found. It might have been removed or renamed, or it may never have existed.', 'mayasarji' ); ?></p>
 				<?php get_search_form(); ?>
 			</div>
 		</div>

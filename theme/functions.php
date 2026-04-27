@@ -219,3 +219,16 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
+
+function mayasarji_theme_support() {
+	remove_theme_support( 'widgets-block-editor' );
+}
+add_action( 'after_setup_theme', 'mayasarji_theme_support' );
+
+function mayasarji_altered_post_time() {
+	// return ( get_the_time('U') >= strtotime('-1 day') )
+	// 	? sprintf( esc_html__( '%s ago', 'mayasarji' ), human_time_diff( get_the_time('U'), current_time('timestamp') ) )
+	// 	: get_the_date();
+	return get_the_date('F j, Y');
+}
+add_filter( 'the_time', 'mayasarji_altered_post_time' );

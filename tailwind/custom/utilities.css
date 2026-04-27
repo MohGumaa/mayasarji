@@ -20,12 +20,14 @@
 }
 
 /* Hero inset shadow */
-.shadow-hero {
+.shadow-hero,
+.shadow-section {
 	box-shadow:
 		inset 120px 100px 250px #000,
 		inset -120px -100px 250px #000;
 }
-.shadow-hero-sm {
+.shadow-hero-sm,
+.shadow-section-sm {
 	box-shadow:
 		inset 60px 60px 160px #000,
 		inset -60px -60px 160px #000;

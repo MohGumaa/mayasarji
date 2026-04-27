@@ -258,11 +258,30 @@ if ( ! function_exists( 'mayasarji_the_posts_navigation' ) ) :
 	 * Wraps `the_posts_pagination` for use throughout the theme.
 	 */
 	function mayasarji_the_posts_navigation() {
+		global $wp_query;
+
+		$total_posts   = $wp_query->found_posts;
+		$posts_per_page = intval( get_query_var( 'posts_per_page' ) );
+		$current_page  = max( 1, get_query_var( 'paged' ) );
+		$start_post    = ( $current_page - 1 ) * $posts_per_page + 1;
+		$end_post      = min( $total_posts, $current_page * $posts_per_page );
+
+		echo '<div class="hidden md:block post-range">';
+		echo sprintf( '<p class="text-sm text-white/60">Showing %d to %d of %d results</p>', $start_post, $end_post, $total_posts );
+		echo '</div>';
+
 		the_posts_pagination(
 			array(
-				'mid_size'  => 2,
-				'prev_text' => __( 'Newer posts', 'mayasarji' ),
-				'next_text' => __( 'Older posts', 'mayasarji' ),
+				'mid_size'  => 1,
+				'prev_text' => 
+					'<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="h-5 w-5 inline-block" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"/>
+					</svg><span class="hidden md:block">' . __( 'previous', 'mayasarji' ). '</span>' ,
+				'next_text' => 
+					'<span class="hidden md:block">' . __( 'next', 'mayasarji' ) . '</span>' . 
+					'<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="h-5 w-5 inline-block" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+					</svg>',
 			)
 		);
 	}
