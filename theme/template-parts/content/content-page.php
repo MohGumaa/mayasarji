@@ -26,8 +26,10 @@ if (has_post_thumbnail()) {
 </section>
 
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('py-16 md:py-24'); ?>>
-	<div <?php mayasarji_content_class( 'entry-content container' ); ?>>
-		<?php the_content();?>
+<article id="post-<?php the_ID(); ?>" <?php post_class('py-16'); ?>>
+	<div class="container">
+		<div <?php mayasarji_content_class( 'entry-content' ); ?>>
+			<?php the_content();?>
+		</div>
 	</div>
 </article>

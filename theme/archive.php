@@ -26,10 +26,10 @@ $banner = get_theme_file_uri( 'assets/images/banner-1.webp' );
 			</div>
 		</section>
 
-		<section class="py-16 md:py-24">
+		<section class="py-16">
 			<div class="container">
 				<?php if ( have_posts() ) :?>
-					<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-10">
+					<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 mb-10">
 						<?php 
 							while ( have_posts() ) {
 								the_post();
