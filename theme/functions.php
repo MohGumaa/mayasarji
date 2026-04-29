@@ -38,7 +38,7 @@ if ( ! defined( 'MAYASARJI_TYPOGRAPHY_CLASSES' ) ) {
 	 */
 	define(
 		'MAYASARJI_TYPOGRAPHY_CLASSES',
-		'prose prose-foreground max-w-none prose-a:text-primary'
+		'prose prose-foreground max-w-none prose-img:rounded-xl prose-a:font-semibold prose-a:text-sky-400 prose-a:hover:text-sky-500 prose-a:hover:underline prose-a:no-underline prose-headings:text-white prose-figcaption:text-center prose-blockquote:bg-tertiary prose-blockquote:text-white  prose-blockquote:font-normal prose-blockquote:tracking-wide prose-blockquote:rounded-md prose-blockquote:px-3 prose-blockquote:py-0.5 prose-blockquote:shadow-xs prose-blockquote:inset-ring prose-blockquote:inset-ring-white/15 prose-blockquote:border-border prose-ul:list-[disclosure-closed]'
 	);
 }
 

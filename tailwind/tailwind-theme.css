@@ -21,14 +21,11 @@
 		ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
 		"Liberation Mono", "Courier New", monospace;
 
-	--font-inter:
-		"Inter", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-		"Segoe UI Symbol", "Noto Color Emoji";
-
 	/**
 	 * Add your theme below:
 	 */
-	--font-rajdhani: "Rajdhani", sans-serif;
+	--font-playfair: "Playfair Display", serif;
+	--font-montserrat: "Montserrat", sans-serif;
 	--font-cormorant: "Cormorant Garamond", Georgia, serif;
 	--font-dm: "DM Sans", sans-serif;
 }

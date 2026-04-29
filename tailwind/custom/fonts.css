@@ -12,3 +12,20 @@
 	src: url("assets/fonts/inter/Inter-VariableFont_slnt,wght.woff2")
 		format("woff2");
 }
+
+/* 
+	// <weight>: Use a value from 100 to 900
+// <uniquifier>: Use a unique and descriptive class name
+.playfair-display-<uniquifier> {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+/* .montserrat-<uniquifier> {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */

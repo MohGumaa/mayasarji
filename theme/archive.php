@@ -9,18 +9,18 @@
 defined( 'ABSPATH' ) || exit;
 get_header();
 
-$banner = get_theme_file_uri( 'assets/images/bg-1.webp' );
+$banner = get_theme_file_uri( 'assets/images/banner-1.webp' );
 ?>
 
 	<main id="main" class="flex flex-col grow">
-		<section class="section-banner shadow-section pt-32 pb-16 md:pt-40 md:pb-20 " style="background-image: url(<?php echo $banner; ?>)">
+		<section class="section-banner shadow-section pt-32 pb-16 md:pt-40 md:pb-20" style="background-image: url(<?php echo $banner; ?>)">
 			<div class="container text-center relative z-50">
 				<p class="text-sky-400 text-sm tracking-[0.3em] uppercase mb-3">
 					<?php esc_html_e( 'Media Blog', 'mayasarji' ); ?>
 				</p>
 				<h1 class="page-title page-title-xl"><?php echo single_term_title('', false); ?></h1>
 				
-				<div class="text-lg md:text-xl max-w-2xl mx-auto text-foreground">
+				<div class="text-sm md:text-base lg:text-xl max-w-2xl mx-auto text-foreground">
 					<?php the_archive_description(); ?>
 				</div>
 			</div>
