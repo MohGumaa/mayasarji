@@ -22,23 +22,26 @@ if (has_post_thumbnail()) {
 		style="background-image: url(<?php echo esc_url($featured_img_url); ?>)"
 	>
 		<div class="container text-center relative z-50">
+			
 			<?php the_title( '<h1 class="page-title page-title-md m-0!">', '</h1>' ); ?>
+
+			<div class="entry-meta mt-4">
+				<?php mayasarji_entry_meta(); ?>
+			</div>
+
 		</div>
 	</header>
 
-	<section <?php mayasarji_content_class( 'entry-content py-12' ); ?>>
+	<div <?php mayasarji_content_class( 'entry-content py-12' ); ?>>
 		<div class="container">
-			<div class="entry-meta">
-				<?php mayasarji_entry_meta(); ?>
-			</div>
-			
+
 			<?php the_content();?>
 
 			<footer class="entry-footer">
 				<?php mayasarji_entry_footer(); ?>
 			</footer>
-		</div>
-	</section>
 
+		</div>
+	</div>
 
 </article>
