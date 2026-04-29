@@ -16,7 +16,7 @@ if (has_post_thumbnail()) {
 
 <section 
 	class="section-banner shadow-section section-hero py-16 lg:py-40 flexCenter flex-col"
-	style="background-image: url(<?php echo $featured_img_url; ?>)"
+	style="background-image: url(<?php echo esc_url($featured_img_url); ?>)"
 	>
 	<div class="container text-center relative z-50">
 		<h1 class="page-title page-title-xl m-0!">

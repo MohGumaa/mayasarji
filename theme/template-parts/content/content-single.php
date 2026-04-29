@@ -2,55 +2,43 @@
 /**
  * Template part for displaying single posts
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
  * @package mayasarji
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+if (has_post_thumbnail()) {
+	$featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'large'); 
+} else {
+	$featured_img_url = get_theme_file_uri( 'assets/images/banner-1.webp' );
+}
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+	<header 
+		class="entry-header section-banner shadow-section section-hero py-16 lg:py-40 flexCenter flex-col"
+		style="background-image: url(<?php echo esc_url($featured_img_url); ?>)"
+	>
+		<div class="container text-center relative z-50">
+			<?php the_title( '<h1 class="page-title page-title-md m-0!">', '</h1>' ); ?>
+		</div>
+	</header>
 
-		<?php if ( ! is_page() ) : ?>
+	<section <?php mayasarji_content_class( 'entry-content py-12' ); ?>>
+		<div class="container">
 			<div class="entry-meta">
 				<?php mayasarji_entry_meta(); ?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+			</div>
+			
+			<?php the_content();?>
 
-	<?php mayasarji_post_thumbnail(); ?>
+			<footer class="entry-footer">
+				<?php mayasarji_entry_footer(); ?>
+			</footer>
+		</div>
+	</section>
 
-	<div <?php mayasarji_content_class( 'entry-content' ); ?>>
-		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers. */
-					__( 'Continue reading<span class="sr-only"> "%s"</span>', 'mayasarji' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			)
-		);
 
-		wp_link_pages(
-			array(
-				'before' => '<div>' . __( 'Pages:', 'mayasarji' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php mayasarji_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-
-</article><!-- #post-${ID} -->
+</article>

@@ -2,11 +2,10 @@
 /**
  * Template part for displaying posts
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
  * @package mayasarji
  */
-
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

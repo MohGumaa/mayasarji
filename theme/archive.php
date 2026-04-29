@@ -13,7 +13,9 @@ $banner = get_theme_file_uri( 'assets/images/banner-1.webp' );
 ?>
 
 	<main id="main" class="flex flex-col grow">
-		<section class="section-banner shadow-section pt-32 pb-16 md:pt-40 md:pb-20" style="background-image: url(<?php echo $banner; ?>)">
+		<section 
+		class="section-banner shadow-section pt-32 pb-16 md:pt-40 md:pb-20" style="background-image: url(<?php echo esc_url($banner); ?>)"
+		>
 			<div class="container text-center relative z-50">
 				<p class="text-sky-400 text-sm tracking-[0.3em] uppercase mb-3">
 					<?php esc_html_e( 'Media Blog', 'mayasarji' ); ?>

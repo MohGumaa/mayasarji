@@ -16,7 +16,7 @@ $banner = get_theme_file_uri( 'assets/images/banner-2.webp' );
 
 		<section 
 			class="section-banner shadow-section section-hero py-16 lg:py-40 flexCenter flex-col"
-			style="background-image: url(<?php echo $banner; ?>)"
+			style="background-image: url(<?php echo esc_url($banner); ?>)"
 			>
 			<div class="container text-center relative z-50">
 				<?php
