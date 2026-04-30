@@ -25,7 +25,7 @@ if (has_post_thumbnail()) {
 			
 			<?php the_title( '<h1 class="page-title page-title-md m-0!">', '</h1>' ); ?>
 
-			<div class="entry-meta mt-4">
+			<div class="flexCenter flex-wrap gap-3 text-sm text-white/60 entry-meta mt-4">
 				<?php mayasarji_entry_meta(); ?>
 			</div>
 
@@ -37,7 +37,7 @@ if (has_post_thumbnail()) {
 
 			<?php the_content();?>
 
-			<footer class="entry-footer">
+			<footer class="flex flex-wrap gap-2 entry-footer article-footer-meta text-sm mt-5">
 				<?php mayasarji_entry_footer(); ?>
 			</footer>
 

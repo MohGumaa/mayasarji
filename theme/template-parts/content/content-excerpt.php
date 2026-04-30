@@ -66,4 +66,5 @@ $default_img  = get_theme_file_uri( 'assets/images/banner-1.webp' );
 		</time>
 
 	</div>
+	
 </article>

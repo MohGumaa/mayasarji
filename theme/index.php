@@ -10,70 +10,74 @@
  * @package mayasarji
  */
 
-// Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
 get_header();
 
-$banner = get_theme_file_uri( 'assets/images/banner.webp' );
+$banner      = get_theme_file_uri( 'assets/images/banner.webp' );
+$site_name   = get_bloginfo('name');
+$tagline     = get_bloginfo('description');
+$is_front    = is_front_page();
 ?>
 
 	<main id="main" class="flex flex-col grow">
-		<section 
-		class="section-banner shadow-section pt-32 pb-16 md:pt-40 md:pb-20" style="background-image: url(<?php echo esc_url($banner); ?>)"
+
+		<header 
+			class="section-banner shadow-section pt-32 pb-16 md:pt-40 md:pb-20"
+			style="background-image: url(<?php echo esc_url($banner); ?>)"
 		>
 			<div class="container text-center relative z-50">
 
-				<?php if ( is_front_page() ) : ?>
-					<!-- Tagline (Montserrat style) -->
+				<?php if ( $is_front ) : ?>
+
 					<p class="text-sky-400 text-sm tracking-[0.3em] uppercase mb-3">
-							<?php echo get_bloginfo('description'); ?>
+						<?php echo esc_html($tagline); ?>
 					</p>
 
-					<!-- Main Name (Playfair Display style) -->
 					<h1 class="page-title page-title-xl">
-							<?php echo get_bloginfo('name'); ?>
+						<?php echo esc_html($site_name); ?>
 					</h1>
 
 				<?php else : ?>
-					<!-- Small label -->
+
 					<p class="text-sky-400 text-lg tracking-[0.3em] uppercase mb-1">
-							<?php echo get_bloginfo('name'); ?>
+						<?php echo esc_html($site_name); ?>
 					</p>
 
-					<!-- Subtitle -->
 					<p class="text-sky-400 text-sm tracking-[0.3em] uppercase mb-3">
-							<?php echo get_bloginfo('description'); ?>
+						<?php echo esc_html($tagline); ?>
 					</p>
 
-					<!-- Page/Post Title -->
 					<h1 class="page-title page-title-xl">
-							<?php single_post_title(); ?>
+						<?php single_post_title(); ?>
 					</h1>
+
 				<?php endif; ?>
 
 			</div>
-		</section>
+		</header>
 
 		<section class="py-16">
 			<div class="container">
-				<?php if ( have_posts() ) :?>
+
+				<?php if ( have_posts() ) : ?>
+
 					<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 mb-10">
-						<?php 
-							while ( have_posts() ) {
-								the_post();
-								get_template_part( 'template-parts/content/content', 'excerpt' );
-							}
-						?>
+						<?php while ( have_posts() ) : the_post(); ?>
+							<?php get_template_part( 'template-parts/content/content', 'excerpt' ); ?>
+						<?php endwhile; ?>
 					</div>
-					<div class="flexCenter flex-1 md:justify-between mt-10">
+
+					<nav class="flexCenter md:justify-between mt-10" aria-label="Pagination">
 						<?php mayasarji_the_posts_navigation(); ?>
-					</div>
-				<?php 
-					else :
-					get_template_part( 'template-parts/content/content', 'none' );
-				endif;
-				?>
+					</nav>
+
+				<?php else : ?>
+
+					<?php get_template_part( 'template-parts/content/content', 'none' ); ?>
+
+				<?php endif; ?>
+
 			</div>
 		</section>
 

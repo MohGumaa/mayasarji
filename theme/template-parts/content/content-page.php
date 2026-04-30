@@ -7,11 +7,11 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if (has_post_thumbnail()) {
-	$featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'large'); 
-} else {
-	$featured_img_url = get_theme_file_uri( 'assets/images/banner-1.webp' );
-}
+// Get featured image or fallback
+$featured_img_url = has_post_thumbnail()
+	? get_the_post_thumbnail_url(get_the_ID(), 'large')
+	: get_theme_file_uri('assets/images/banner-1.webp');
+	
 ?>
 
 <section 

@@ -11,24 +11,73 @@ if ( ! function_exists( 'mayasarji_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
-	function mayasarji_posted_on() {
-		$time_string = '<time class="published updated" datetime="%1$s">%2$s</time>';
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-		}
+	// function mayasarji_posted_on() {
+	// 	$is_updated = get_the_time('U') !== get_the_modified_time('U');
 
-		$time_string = sprintf(
-			$time_string,
-			esc_attr( get_the_date( DATE_W3C ) ),
-			esc_html( get_the_date() ),
-			esc_attr( get_the_modified_date( DATE_W3C ) ),
-			esc_html( get_the_modified_date() )
+	// 	$time_string = '<time class="published updated" datetime="%1$s">%2$s</time>';
+	// 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+	// 		$time_string = '<time class="published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+	// 	}
+
+	// 	$time_string = sprintf(
+	// 		$time_string,
+	// 		esc_attr( get_the_date( DATE_W3C ) ),
+	// 		esc_html( get_the_date() ),
+	// 		esc_attr( get_the_modified_date( DATE_W3C ) ),
+	// 		esc_html( get_the_modified_date() )
+	// 	);
+
+	// 	$icon = '<svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+	// 		<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+	// 	</svg>';
+
+	// 	printf(
+	// 		'<span class="posted-on flex items-center gap-0.5">
+	// 			<span class="icon">%1$s</span>
+	// 			<a href="%2$s" rel="bookmark">%3$s</a>
+	// 		</span>',
+	// 		$icon, // safe inline SVG
+	// 		esc_url(get_permalink()),
+	// 		$time_string // already escaped above
+	// 	);
+
+	// }
+
+	function mayasarji_posted_on() {
+
+		$is_updated = get_the_time('U') !== get_the_modified_time('U');
+
+		$published_time = sprintf(
+			'<time class="published %3$s" datetime="%1$s">%2$s</time>',
+			esc_attr(get_the_date(DATE_W3C)),
+			esc_html(get_the_date()),
+			$is_updated ? 'hidden' : ''
 		);
 
+		$updated_time = '';
+
+		if ($is_updated) {
+			$updated_time = sprintf(
+				'<time class="updated" datetime="%1$s">%2$s</time>',
+				esc_attr(get_the_modified_date(DATE_W3C)),
+				esc_html(get_the_modified_date())
+			);
+		}
+
+		$icon = '<svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+		</svg>';
+
 		printf(
-			'<a href="%1$s" rel="bookmark">%2$s</a>',
-			esc_url( get_permalink() ),
-			$time_string // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			'<span class="posted-on flex items-center gap-0.5">
+				<span class="icon">%1$s</span>
+				<span class="time">
+					%2$s %3$s
+				</span>
+			</span>',
+			$icon,
+			$updated_time ?: $published_time,
+			$updated_time ? $published_time : ''
 		);
 	}
 endif;
@@ -39,11 +88,21 @@ if ( ! function_exists( 'mayasarji_posted_by' ) ) :
 	 */
 	function mayasarji_posted_by() {
 		printf(
-		/* translators: 1: posted by label, only visible to screen readers. 2: author link. 3: post author. */
-			'<span class="sr-only">%1$s</span><span class="author vcard"><a class="url fn n" href="%2$s">%3$s</a></span>',
-			esc_html__( 'Posted by', 'mayasarji' ),
-			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			esc_html( get_the_author() )
+			/* translators: 1: posted by label (screen readers). 2: author link. 3: post author. */
+			'<span class="sr-only">%1$s</span>
+			<span class="author vcard flex items-center gap-0.5">
+				<a class="url fn n flex items-center gap-0.5" href="%2$s">
+					<span class="icon">%4$s</span>
+					<span>%3$s</span>
+				</a>
+			</span>',
+			esc_html__('Posted by', 'mayasarji'),
+			esc_url(get_author_posts_url(get_the_author_meta('ID'))),
+			esc_html(get_the_author()),
+			// SVG (safe inline output)
+			'<svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 12c2.485 0 4.5-2.015 4.5-4.5S14.485 3 12 3 7.5 5.015 7.5 7.5 9.515 12 12 12zm0 1.5c-3.315 0-6 2.685-6 6h12c0-3.315-2.685-6-6-6z"/>
+			</svg>'
 		);
 	}
 endif;
@@ -77,7 +136,8 @@ if ( ! function_exists( 'mayasarji_entry_meta' ) ) :
 			mayasarji_posted_on();
 
 			/* translators: used between list items, there is a space after the comma. */
-			$categories_list = get_the_category_list( __( ', ', 'mayasarji' ) );
+			// $categories_list = get_the_category_list( __( ', ', 'mayasarji' ) );
+			$categories_list = null;
 			if ( $categories_list ) {
 				printf(
 				/* translators: 1: posted in label, only visible to screen readers. 2: list of categories. */
@@ -88,7 +148,8 @@ if ( ! function_exists( 'mayasarji_entry_meta' ) ) :
 			}
 
 			/* translators: used between list items, there is a space after the comma. */
-			$tags_list = get_the_tag_list( '', __( ', ', 'mayasarji' ) );
+			// $tags_list = get_the_tag_list( '', __( ', ', 'mayasarji' ) );
+			$tags_list = null;
 			if ( $tags_list ) {
 				printf(
 				/* translators: 1: tags label, only visible to screen readers. 2: list of tags. */
@@ -131,30 +192,26 @@ if ( ! function_exists( 'mayasarji_entry_footer' ) ) :
 		// Hide author, post date, category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 
-			// Posted by.
-			mayasarji_posted_by();
-
-			// Posted on.
-			mayasarji_posted_on();
-
 			/* translators: used between list items, there is a space after the comma. */
-			$categories_list = get_the_category_list( __( ', ', 'mayasarji' ) );
-			if ( $categories_list ) {
+			$tags_list = get_the_tag_list( '', __( ' ', 'mayasarji' ) );
+			if ($tags_list) {
 				printf(
-				/* translators: 1: posted in label, only visible to screen readers. 2: list of categories. */
-					'<span><span class="sr-only">%1$s</span>%2$s</span>',
-					esc_html__( 'Posted in', 'mayasarji' ),
-					$categories_list // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				);
-			}
+					/* translators: 1: tags label (screen readers). 2: icon + label. 3: list of tags. */
+					'<div class="tags-links flex flex-wrap items-center gap-2">
+						
+						<span class="sr-only">%1$s</span>
+						
+						<span class="flex items-center">
+							<svg xmlns="http://www.w3.org/2000/svg" class="size-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 7h.01M3 3l9 9-9 9V3z"/>
+							</svg>
+							<span class="font-medium">Tags</span>
+						</span>
 
-			/* translators: used between list items, there is a space after the comma. */
-			$tags_list = get_the_tag_list( '', __( ', ', 'mayasarji' ) );
-			if ( $tags_list ) {
-				printf(
-				/* translators: 1: tags label, only visible to screen readers. 2: list of tags. */
-					'<span><span class="sr-only">%1$s</span>%2$s</span>',
-					esc_html__( 'Tags:', 'mayasarji' ),
+						<span class="ms-tag-list flex flex-wrap items-center gap-2">%2$s</span>
+
+					</div>',
+					esc_html__('Tags:', 'mayasarji'),
 					$tags_list // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				);
 			}
