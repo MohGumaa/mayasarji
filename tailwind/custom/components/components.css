@@ -56,18 +56,8 @@ main {
 	@apply w-full;
 }
 
-.ms-tag-list a,
-.search-submit,
-.article-footer-meta a {
-	@apply border border-dashed border-sky-300/30 bg-sky-400/10 px-5 py-2 font-semibold text-sky-400 no-underline transition-all duration-250 hover:bg-sky-400/15 hover:text-sky-400;
-}
-
 .article-footer-meta a {
 	@apply rounded px-3 py-1 hover:no-underline!;
-}
-
-.ms-btn-action a {
-	@apply text-[0.75rem] tracking-[0.14em] after:hidden;
 }
 
 .header-scrolled {
@@ -137,4 +127,36 @@ main {
 
 .wp-post-image {
 	@apply after:bg-tertiary/50 relative aspect-video h-full w-full overflow-hidden rounded-t-lg object-cover after:absolute after:top-0 after:left-0 after:h-full after:w-full after:animate-pulse after:rounded-t-lg after:border after:border-white/15 after:duration-300 after:content-[""];
+}
+
+.ms-footer-widg .menu {
+	@apply flex flex-col gap-4;
+}
+
+.ms-footer-widg p {
+	@apply text-sm leading-6 text-white/60;
+}
+
+.ms-footer-widg .ms-link {
+	@apply mb-4 block text-[1.5rem] font-bold tracking-[0.12em] text-white uppercase no-underline;
+}
+
+.ms-btn a,
+.ms-tag-list a,
+.search-submit,
+.ms-btn-action a,
+.article-footer-meta a {
+	@apply border border-dashed border-sky-300/30 bg-sky-400/10 px-5 py-2 font-semibold text-sky-400 no-underline transition-all duration-250 hover:bg-sky-400/15 hover:text-sky-400;
+}
+
+.ms-btn-action a {
+	@apply text-[0.75rem] tracking-[0.14em] after:hidden;
+}
+
+.ms-btn {
+	@apply w-fit;
+}
+
+.ms-social-link {
+	@apply size-6 text-white hover:text-sky-400 [&_svg]:w-6;
 }

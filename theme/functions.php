@@ -73,15 +73,16 @@ if ( ! function_exists( 'mayasarji_setup' ) ) :
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
-		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus(
 			array(
-				'menu-1' => __( 'Primary', 'mayasarji' ),
-				'menu-2' => __( 'Footer Menu', 'mayasarji' ),
+				'menu-1'          => __( 'Primary', 'mayasarji' ),
+				'menu-2'          => __( 'Footer Menu', 'mayasarji' ),
+				'footer-column-2' => __( 'Footer Column 2 Menu', 'mayasarji' ),
+				'footer-column-3' => __( 'Footer Column 3 Menu', 'mayasarji' ),
 			)
 		);
 
@@ -123,17 +124,16 @@ add_action( 'after_setup_theme', 'mayasarji_setup' );
 /**
  * Register widget area.
  *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function mayasarji_widgets_init() {
 	register_sidebar(
 		array(
 			'name'          => __( 'Footer', 'mayasarji' ),
-			'id'            => 'sidebar-1',
+			'id'            => 'ms-footer-widget',
 			'description'   => __( 'Add widgets here to appear in your footer.', 'mayasarji' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'before_widget' => '<section id="%1$s" class="widget ms-footer-widg ms-widget %2$s">',
 			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
+			'before_title'  => '<h2 class="widget-title font-montserrat font-medium uppercase text-sky-300 mb-5">',
 			'after_title'   => '</h2>',
 		)
 	);

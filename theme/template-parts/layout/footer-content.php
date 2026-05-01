@@ -6,9 +6,21 @@
  */
 ?>
 
-<footer id="colophon" class="stripe-texture border-t border-white/6 stripe-texture overflow-hidden py-9">
-	<div class="container">
-		<div class="flex flex-col md:flex-row items-center justify-between gap-2 text-sm text-foreground">
+<footer 
+	id="colophon" 
+	class="stripe-texture overflow-hidden"
+>
+
+	<?php if ( is_active_sidebar( 'ms-footer-widget' ) ): ?>
+		<div class="lg:px-8 py-16 border-t border-white/6">
+			<div class="container grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+				<?php dynamic_sidebar( 'ms-footer-widget' ); ?>
+			</div>
+		</div>
+	<?php endif;?>
+
+	<div class="border-t border-white/6 py-9">
+		<div class="container flex flex-col md:flex-row items-center justify-between gap-2 text-sm text-foreground">
 			<p class="text-center md:text-left">
 				&copy; <?php echo date('Y');?> 
 				<span class="text-sky-400">
@@ -28,4 +40,5 @@
 			?>
 		</div>
 	</div>
+
 </footer>

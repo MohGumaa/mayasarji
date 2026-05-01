@@ -104,10 +104,10 @@ function mayasarji_continue_reading_link( $more_string ) {
 }
 
 // Filter the excerpt more link.
-add_filter( 'excerpt_more', 'mayasarji_continue_reading_link' );
+// add_filter( 'excerpt_more', 'mayasarji_continue_reading_link' );
 
 // Filter the content more link.
-add_filter( 'the_content_more_link', 'mayasarji_continue_reading_link' );
+// add_filter( 'the_content_more_link', 'mayasarji_continue_reading_link' );
 
 /**
  * Outputs a comment in the HTML5 format.
