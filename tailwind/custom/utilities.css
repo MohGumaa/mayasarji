@@ -33,6 +33,10 @@
 		inset -60px -60px 160px #000;
 }
 
+#site-navigation.nav-visible {
+	transform: translateX(0);
+}
+
 /* ── Keyframe animations ── */
 @keyframes scrollPulse {
 	0%,

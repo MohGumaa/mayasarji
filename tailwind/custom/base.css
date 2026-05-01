@@ -13,7 +13,7 @@ html {
 }
 
 body {
-	@apply bg-background font-montserrat overflow-x-hidden text-white antialiased;
+	@apply bg-background font-montserrat overflow-x-hidden scroll-smooth text-white antialiased;
 }
 
 h1,

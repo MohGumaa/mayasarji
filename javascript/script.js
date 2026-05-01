@@ -1,63 +1,47 @@
-/**
- * Front-end JavaScript
- *
- * The JavaScript code you place here will be processed by esbuild. The output
- * file will be created at `../theme/js/script.min.js` and enqueued in
- * `../theme/functions.php`.
- *
- * For esbuild documentation, please see:
- * https://esbuild.github.io/
- */
-
 document.addEventListener('DOMContentLoaded', () => {
-  const html = document.documentElement;
-  const header = document.getElementById('site-header');
-	const hamburger = document.getElementById('hamburger');
+  const html        = document.documentElement;
+  const header      = document.getElementById('site-header');
+  const nav         = document.getElementById('site-navigation');
+  const hamburger   = document.getElementById('hamburger');
 
-  const toggleMenu = () => {
-    // Toggle aria-expanded
-    const isExpanded =
-      hamburger.getAttribute('aria-expanded') === 'true';
-    hamburger.setAttribute('aria-expanded', !isExpanded);
-
-    // Toggle menu visibility
-    if (isExpanded) {
-      // // Hide menu
-      // siteNavigation.classList.add('max-lg:translate-x-[-150%]');
-      // siteNavigation.classList.remove('max-lg:translate-x-[0]');
-      // // Add visibility hidden after transition completes
-      // setTimeout(() => {
-      //   siteNavigation.classList.add('max-lg:invisible');
-      // }, 300); // Match the transition duration
-
-      // Remove open class from menu button
-      hamburger.classList.remove('nav-open');
-    } else {
-      // Show menu
-      // siteNavigation.classList.remove('max-lg:invisible');
-      // siteNavigation.classList.remove('max-lg:translate-x-[-150%]');
-      // siteNavigation.classList.add('max-lg:translate-x-[0]');
-
-      // Add open class to menu button
-      hamburger.classList.add('nav-open');
-    }
-
-    // Add overflow to HTML element
-    html.classList.toggle('overflow-hidden');
-
-    // Recalculate height when menu is toggled
-    // if (window.innerWidth < 1024) {
-    //   updateNavHeight();
-    // }
-  }
-
-  // Header scroll glass effect
-  window.addEventListener('scroll', () => {
-    console.log("sio")
+  // --- Scroll: glass effect (independent of menu state) ---
+  const onScroll = () => {
     header.classList.toggle('header-scrolled', window.scrollY > 40);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // --- Menu open/close ---
+  const isOpen = () => hamburger.getAttribute('aria-expanded') === 'true';
+
+  const openMenu = () => {
+    hamburger.setAttribute('aria-expanded', 'true');
+    hamburger.classList.add('nav-open');
+    nav.classList.remove('max-lg:-translate-x-full');
+    html.classList.add('overflow-hidden');
+    header.classList.add('header-scrolled');           // always add on open
+  };
+
+  const closeMenu = () => {
+    hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.classList.remove('nav-open');
+    nav.classList.add('max-lg:-translate-x-full');
+    html.classList.remove('overflow-hidden');
+    if (window.scrollY <= 40) {
+      header.classList.remove('header-scrolled');      // only remove if scroll hasn't earned it
+    }
+  };
+
+  hamburger.addEventListener('click', () => (isOpen() ? closeMenu() : openMenu()));
+
+  // Close on outside click
+  document.addEventListener('click', (e) => {
+    if (isOpen() && !nav.contains(e.target) && !hamburger.contains(e.target)) {
+      closeMenu();
+    }
   });
 
-  // Mobile menu toggle functionality
-  hamburger.addEventListener('click', toggleMenu);
-})
-
+  // Close when resizing to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1024 && isOpen()) closeMenu();
+  }, { passive: true });
+});

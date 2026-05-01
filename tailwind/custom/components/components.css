@@ -28,7 +28,7 @@ main {
 }
 
 .container {
-	@apply mx-auto px-3;
+	@apply mx-auto px-3.5;
 }
 
 .flexCenter {
