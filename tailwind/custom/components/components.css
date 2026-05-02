@@ -1,26 +1,3 @@
-.page-content > *,
-.entry-content > * {
-	/* Content width from the `theme.json` file */
-	@apply max-w-content mx-auto;
-}
-
-.entry-content > .alignwide {
-	/* Wide width from the `theme.json` file */
-	@apply max-w-wide;
-}
-
-.entry-content > .alignfull {
-	@apply max-w-none;
-}
-
-.entry-content > .alignleft {
-	@apply float-left mr-8;
-}
-
-.entry-content > .alignright {
-	@apply float-right ml-8;
-}
-
 /* @layer components used for custom reusable components that combine multiple tailwinds classes  */
 .page-body,
 main {
@@ -33,6 +10,14 @@ main {
 
 .flexCenter {
 	@apply flex items-center justify-center;
+}
+
+.text-white-30 {
+	@apply text-white/30;
+}
+
+.text-white-60 {
+	@apply text-white/60;
 }
 
 .menu a,
@@ -86,7 +71,7 @@ main {
 
 .page-title,
 .entry-title {
-	@apply mb-6 text-3xl font-black tracking-wide text-balance;
+	@apply mb-6 text-3xl font-black tracking-wide text-balance text-white;
 }
 
 .page-title-xl {
@@ -107,6 +92,18 @@ main {
 
 .section-banner {
 	@apply relative z-1 min-h-90 w-screen snap-center overflow-x-hidden bg-black bg-cover bg-center bg-no-repeat after:absolute after:top-0 after:left-0 after:h-full after:w-full after:bg-black/80 after:content-[''] md:min-h-105 lg:min-h-117.5;
+}
+
+.section-heading {
+	@apply text-foreground mb-6 text-4xl font-bold capitalize sm:text-5xl md:text-6xl;
+}
+
+.section-sub-heading {
+	@apply text-lg leading-relaxed;
+}
+
+.section-label {
+	@apply mb-4 text-xs tracking-[0.4em] text-sky-400 uppercase;
 }
 
 .pagination .nav-links {

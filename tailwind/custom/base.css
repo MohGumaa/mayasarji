@@ -8,12 +8,8 @@
  * This uses the background and foreground colors declared in the `theme.json`
  * file and is applied both to the front end and in the block editor.
  */
-html {
-	scroll-behavior: smooth;
-}
-
 body {
-	@apply bg-background font-montserrat overflow-x-hidden scroll-smooth text-white antialiased;
+	@apply bg-background font-montserrat text-foreground overflow-x-hidden scroll-smooth antialiased;
 }
 
 h1,

@@ -11,8 +11,8 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 ?>
 
-	<main id="primary" class="py-16 md:py-20">
-		<div class="container flexCenter flex-col grow">
+	<main id="primary" class="py-16 md:py-20 h-[80svh] md:min-h-150 lg:min-h-200">
+		<div class="container flexCenter flex-col text-center grow">
 			<svg class="w-60 h-36 sm:w-83 sm:h-49.75 mb-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332 190" fill="none">
 				<g clip-path="url(#clip0_3686_38395)">
 					<path d="M285.364 173.118C285.97 173.468 285.97 174.01 285.364 174.361C284.759 174.712 283.802 174.712 283.196 174.361C282.591 174.01 282.591 173.468 283.196 173.118C283.802 172.767 284.759 172.767 285.364 173.118Z" fill="#16110D"></path>
