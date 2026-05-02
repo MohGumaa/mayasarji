@@ -15,7 +15,7 @@ $default_img  = get_theme_file_uri( 'assets/images/banner-1.webp' );
 ══════════════════════════════════════ -->
 <section 
   id="hero" 
-  class="stripe-texture shadow-hero w-full h-[90svh] min-h-150 relative overflow-hidden"
+  class="stripe-texture w-full h-[90svh] min-h-150 relative overflow-hidden"
 >
   <div class="container h-full">
     <img src="https://mayasarji.test/wp-content/uploads/2026/05/img-1.webp" alt="Flag">
@@ -25,7 +25,7 @@ $default_img  = get_theme_file_uri( 'assets/images/banner-1.webp' );
 <!-- ══════════════════════════════════════
   ABOUT
 ══════════════════════════════════════ -->
-<section id="section" class="py-24 md:py-32 overflow-hidden">
+<section id="section" class="shadow-section-sm py-24 md:py-32 overflow-hidden">
   <div class="container reveal">
     <h2 class="page-title font-bold mb-6 md:mb-8 reveal reveal-d1">Meet Maya</h2>
 
@@ -63,7 +63,7 @@ $default_img  = get_theme_file_uri( 'assets/images/banner-1.webp' );
 <!-- ══════════════════════════════════════
   BRANDS
 ══════════════════════════════════════ -->
-<section id="brands" class="stripe-texture shadow-hero py-24 overflow-hidden">
+<section id="brands" class="stripe-texture py-24 overflow-hidden">
   <div class="container text-center reveal mb-16">
     <p class="section-label">
       <?php esc_html_e( 'trusted by', 'mayasarji' ); ?>
@@ -107,3 +107,4 @@ $default_img  = get_theme_file_uri( 'assets/images/banner-1.webp' );
     <?php esc_html_e( '...and hundreds more prestigious international and local brands', 'mayasarji' ); ?>
   </p>
 </section>
+

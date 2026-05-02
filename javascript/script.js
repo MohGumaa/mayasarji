@@ -4,23 +4,46 @@ document.addEventListener('DOMContentLoaded', () => {
   const nav         = document.getElementById('site-navigation');
   const hamburger   = document.getElementById('hamburger');
 
-  // Brand marquee
-  const row1Brands = ["L'Oreal","Nestlé","Emirates Airline","Dubai Tourism","Pampers","Ferrero","Hermès","Mercedes-Benz"];
-  const row2Brands = ["OSN","LUX","P&G","Unilever","Cartier","Visa","Mastercard","Samsung"];
+  // Brand marquee with icons
+  const row1Brands = [
+    { name: "L'Oreal", icon: "icon-0" },
+    { name: "Nestlé", icon: "icon-1" },
+    { name: "Emirates Airline", icon: "icon-2" },
+    { name: "Dubai Tourism", icon: "icon-3" },
+    { name: "Pampers", icon: "icon-4" },
+    { name: "Ferrero", icon: "icon-5" },
+    { name: "Hermès", icon: "icon-6" },
+    { name: "Mercedes-Benz", icon: "icon-7" }
+  ];
 
-  function brandCard(name) {
-    return `<div class="shrink-0 bg-white/3 border border-white/8 rounded-xl px-8 py-4 flex items-center justify-center min-w-40 md:min-w-50 hover:border-gold/40 hover:bg-white/6 transition-all duration-300 group/item cursor-default"><span class="font-rajdhani text-[0.88rem] font-medium text-white/40 group-hover/item:text-gold transition-colors duration-300 whitespace-nowrap tracking-wide">${name}</span></div>`;
+  const row2Brands = [
+    { name: "OSN", icon: "icon-8" },
+    { name: "LUX", icon: "icon-9" },
+    { name: "P&G", icon: "icon-10" },
+    { name: "Unilever", icon: "icon-11" },
+    { name: "Cartier", icon: "icon-12" },
+    { name: "Visa", icon: "icon-13" },
+    { name: "Mastercard", icon: "icon-14" },
+    { name: "Samsung", icon: "icon-15" }
+  ];
+
+  function brandCard(brand) {    
+    const iconPath = `${THEME_CONFIG.assetsUrl}/assets/icon/${brand.icon}.webp`;
+
+    return `<div class="shrink-0 bg-white/3 border border-white/8 rounded-xl px-8 py-4 flex items-center justify-center min-w-40 md:min-w-50 hover:border-sky-400/15 hover:bg-white/6 transition-all duration-300 group/item cursor-default">
+      <img src="${iconPath}" alt="${brand.name}" class="h-8 w-auto object-contain invert brightness-0" loading="lazy" />
+    </div>`;
   }
 
   function buildRow(id, brands) {
     const el = document.getElementById(id);
     // 4× duplicate for seamless infinite scroll
-    const html = [...brands,...brands,...brands,...brands].map(brandCard).join('');
+    const html = [...brands, ...brands, ...brands, ...brands].map(brandCard).join('');
     el.outerHTML = html;
   }
 
   buildRow('row1', row1Brands);
-    buildRow('row2', row2Brands);
+  buildRow('row2', row2Brands);
 
   // --- Scroll: glass effect (independent of menu state) ---
   const onScroll = () => {
