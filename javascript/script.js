@@ -30,8 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function brandCard(brand) {    
     const iconPath = `${THEME_CONFIG.assetsUrl}/assets/icon/${brand.icon}.webp`;
 
-    return `<div class="shrink-0 bg-white/3 border border-white/8 rounded-xl px-8 py-4 flex items-center justify-center min-w-40 md:min-w-50 hover:border-sky-400/15 hover:bg-white/6 transition-all duration-300 group/item cursor-default">
-      <img src="${iconPath}" alt="${brand.name}" class="h-8 w-auto object-contain invert brightness-0" loading="lazy" />
+    // invert brightness-0
+    return `<div class="shrink-0 bg-white/3 border border-white/8 rounded-xl px-8 py-4 flex items-center justify-center min-w-32 sm:min-w-40 md:min-w-50 hover:border-sky-400/15 hover:bg-white/6 transition-all duration-300 group/item cursor-default">
+      <img src="${iconPath}" alt="${brand.name}" class="h-6 sm:h-8 w-auto object-contain" loading="lazy" />
     </div>`;
   }
 

@@ -94,12 +94,16 @@ main {
 	@apply relative z-1 min-h-90 w-screen snap-center overflow-x-hidden bg-black bg-cover bg-center bg-no-repeat after:absolute after:top-0 after:left-0 after:h-full after:w-full after:bg-black/80 after:content-[''] md:min-h-105 lg:min-h-117.5;
 }
 
+.section-banner-dark {
+	@apply after:bg-black/95;
+}
+
 .section-heading {
 	@apply text-foreground mb-6 text-4xl font-bold capitalize sm:text-5xl md:text-6xl;
 }
 
 .section-sub-heading {
-	@apply text-lg leading-relaxed;
+	@apply text-base leading-relaxed md:text-lg;
 }
 
 .section-label {
