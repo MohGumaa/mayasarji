@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const nav         = document.getElementById('site-navigation');
   const hamburger   = document.getElementById('hamburger');
 
+  // BRAND MARQUEE - ONLY WHERE ELEMENTS EXIST
+  // ============================================
+  const row1El = document.getElementById('row1');
+  const row2El = document.getElementById('row2');
+
   // Brand marquee with icons
   const row1Brands = [
     { name: "L'Oreal", icon: "icon-0" },
@@ -27,29 +32,13 @@ document.addEventListener('DOMContentLoaded', () => {
     { name: "Samsung", icon: "icon-15" }
   ];
 
-  function brandCard(brand) {    
-    const iconPath = `${THEME_CONFIG.assetsUrl}/assets/icon/${brand.icon}.webp`;
-
-    // invert brightness-0
-    return `<div class="shrink-0 bg-white/3 border border-white/8 rounded-xl px-8 py-4 flex items-center justify-center min-w-32 sm:min-w-40 md:min-w-50 hover:border-sky-400/15 hover:bg-white/6 transition-all duration-300 group/item cursor-default">
-      <img src="${iconPath}" alt="${brand.name}" class="h-6 sm:h-8 w-auto object-contain" loading="lazy" />
-    </div>`;
-  }
-
-  function buildRow(id, brands) {
-    const el = document.getElementById(id);
-    // 4× duplicate for seamless infinite scroll
-    const html = [...brands, ...brands, ...brands, ...brands].map(brandCard).join('');
-    el.outerHTML = html;
-  }
-
-  buildRow('row1', row1Brands);
-  buildRow('row2', row2Brands);
-
   // --- Scroll: glass effect (independent of menu state) ---
   const onScroll = () => {
     header.classList.toggle('header-scrolled', window.scrollY > 40);
   };
+
+  // Check initial scroll position on page load and on scroll
+  onScroll(); 
   window.addEventListener('scroll', onScroll, { passive: true });
 
   // --- Menu open/close ---
@@ -60,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.classList.add('nav-open');
     nav.classList.remove('max-lg:-translate-x-full');
     html.classList.add('overflow-hidden');
-    header.classList.add('header-scrolled');           // always add on open
+    header.classList.add('header-scrolled');
   };
 
   const closeMenu = () => {
@@ -69,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     nav.classList.add('max-lg:-translate-x-full');
     html.classList.remove('overflow-hidden');
     if (window.scrollY <= 40) {
-      header.classList.remove('header-scrolled');      // only remove if scroll hasn't earned it
+      header.classList.remove('header-scrolled');
     }
   };
 
@@ -87,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.innerWidth >= 1024 && isOpen()) closeMenu();
   }, { passive: true });
 
-   // Scroll reveal
+  // Scroll reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -98,4 +87,31 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.12 });
   
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  function brandCard(brand) {    
+    const iconPath = `${THEME_CONFIG.assetsUrl}/assets/icon/${brand.icon}.webp`;
+
+    return `<div class="shrink-0 bg-white/3 border border-white/8 rounded-xl px-8 py-4 flex items-center justify-center min-w-32 sm:min-w-40 md:min-w-50 hover:border-sky-400/15 hover:bg-white/6 transition-all duration-300 group/item cursor-default">
+      <img src="${iconPath}" alt="${brand.name}" class="h-6 sm:h-8 w-auto object-contain" loading="lazy" />
+    </div>`;
+  }
+
+  function buildRow(el, brands) {
+    if (!el) return; // Safety check
+    // 4× duplicate for seamless infinite scroll
+    const html = [...brands, ...brands, ...brands, ...brands].map(brandCard).join('');
+
+    // Use innerHTML instead of outerHTML
+    el.innerHTML = html;
+  }
+
+  // Build rows only if elements exist
+  if (row1El) {
+    buildRow(row1El, row1Brands);
+  }
+
+  if (row2El) {
+    buildRow(row2El, row2Brands);
+  }
+
 });

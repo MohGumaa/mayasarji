@@ -7,7 +7,6 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$bg  = get_theme_file_uri( 'assets/images/bg-1.webp' );
 $banner  = get_theme_file_uri( 'assets/images/banner-2.webp' );
 $voice_section = get_theme_file_uri( 'assets/images/img-0.webp' );
 ?>
@@ -78,12 +77,8 @@ $voice_section = get_theme_file_uri( 'assets/images/img-0.webp' );
 <!-- ══════════════════════════════════════
   BRANDS
 ══════════════════════════════════════ -->
-<section 
-  id="brands" 
-  class="section-banner section-banner-dark py-24 overflow-hidden"
-  style="background-image: url(<?php echo esc_url($bg); ?>)"
-  >
-  <div class="container text-center reveal mb-16 relative z-1">
+<section id="brands" class="bg-black/70 py-24 overflow-hidden">
+  <div class="container text-center reveal mb-16">
     <p class="section-label">
       <?php esc_html_e( 'trusted by', 'mayasarji' ); ?>
     </p>
@@ -95,13 +90,13 @@ $voice_section = get_theme_file_uri( 'assets/images/img-0.webp' );
     </p>
   </div>
 
-  <div class="space-y-3 reveal relative z-1">
+  <div class="space-y-3 reveal">
     
     <!-- Row 1: left -->
     <div class="relative flex overflow-hidden py-2 group">
 
-      <div class="absolute left-0 top-0 bottom-0 w-32 sm:w-40 bg-linear-to-r from-background to-transparent z-10 pointer-events-none hidden"></div>
-      <div class="absolute right-0 top-0 bottom-0 w-32 sm:w-40 bg-linear-to-l from-background to-transparent z-10 pointer-events-none hidden"></div>
+      <div class="absolute left-0 top-0 bottom-0 w-32 sm:w-40 bg-linear-to-r from-background to-transparent z-10 pointer-events-none"></div>
+      <div class="absolute right-0 top-0 bottom-0 w-32 sm:w-40 bg-linear-to-l from-background to-transparent z-10 pointer-events-none"></div>
       
       <div class="flex gap-4 animate-marquee animate-marquee-left">
         <!-- duplicated for seamless loop -->
@@ -112,8 +107,8 @@ $voice_section = get_theme_file_uri( 'assets/images/img-0.webp' );
 
     <!-- Row 2: right -->
     <div class="relative flex overflow-hidden py-2 group">
-      <div class="absolute left-0 top-0 bottom-0 w-32 sm:w-40 bg-linear-to-r from-background to-transparent z-10 pointer-events-none hidden"></div>
-        <div class="absolute right-0 top-0 bottom-0 w-32 sm:w-40 bg-linear-to-l from-background to-transparent z-10 pointer-events-none hidden"></div>  
+      <div class="absolute left-0 top-0 bottom-0 w-32 sm:w-40 bg-linear-to-r from-background to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-32 sm:w-40 bg-linear-to-l from-background to-transparent z-10 pointer-events-none"></div>  
 
       <div class="flex gap-4 animate-marquee animate-marquee-right">
         <div id="row2"></div>
@@ -122,7 +117,7 @@ $voice_section = get_theme_file_uri( 'assets/images/img-0.webp' );
 
   </div>
 
-  <p class="text-center text-white-60 mt-16 text-sm tracking-wide px-3.5 relative z-1">
+  <p class="text-center text-white-60 mt-16 text-sm tracking-wide px-3.5">
     <?php esc_html_e( '...and hundreds more prestigious international and local brands', 'mayasarji' ); ?>
   </p>
 </section>
@@ -242,3 +237,5 @@ $voice_section = get_theme_file_uri( 'assets/images/img-0.webp' );
 
   </div>
 </section>
+
+

@@ -161,3 +161,20 @@ main {
 .ms-social-link {
 	@apply size-6 text-white hover:text-sky-400 [&_svg]:w-6;
 }
+
+div.wpforms-container-full input:not(.search-submit),
+div.wpforms-container-full textarea {
+	@apply w-full py-6;
+}
+
+div.wpforms-container-full button[type="submit"] {
+	@apply h-auto w-full py-4;
+}
+
+::placeholder {
+	@apply text-sm font-normal md:text-base;
+}
+
+div.wpforms-container-full input[type="text"] {
+	@apply bg-tertiary;
+}

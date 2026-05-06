@@ -12,7 +12,7 @@
 >
 
 	<?php if ( is_active_sidebar( 'ms-footer-widget' ) ): ?>
-		<div class="lg:px-8 py-16 border-t border-white/6">
+		<div class="py-16 border-t border-white/6">
 			<div class="container grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
 				<?php dynamic_sidebar( 'ms-footer-widget' ); ?>
 			</div>
