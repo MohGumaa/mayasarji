@@ -6,6 +6,8 @@
  *
  * @package mayasarji
  */
+
+defined( 'ABSPATH' ) || exit;
 ?>
 
 	</div>

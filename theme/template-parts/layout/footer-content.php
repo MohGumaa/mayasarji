@@ -4,6 +4,8 @@
  *
  * @package mayasarji
  */
+
+defined( 'ABSPATH' ) || exit;
 ?>
 
 <footer 

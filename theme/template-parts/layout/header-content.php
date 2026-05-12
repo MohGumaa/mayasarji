@@ -4,6 +4,8 @@
  *
  * @package mayasarji
  */
+
+defined( 'ABSPATH' ) || exit;
 ?>
 
 <header id="site-header" class="fixed top-0 left-0 right-0 z-50 h-18 transition-all duration-400">

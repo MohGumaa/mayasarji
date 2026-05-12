@@ -7,13 +7,18 @@
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
-get_header('landing');
+get_header();
 
 ?>
 
 	<main id="main" class="flex flex-col grow">
-		comming soon
+		<?php
+			while ( have_posts() ) :
+				the_post();
+				get_template_part( 'template-parts/content/content', 'front' );
+			endwhile;
+		?>
 	</main>
 
 <?php
-get_footer('landing');
+get_footer();

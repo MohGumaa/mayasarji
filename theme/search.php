@@ -39,7 +39,7 @@ $search_query = get_search_query();
 
 				<?php if ( have_posts() ) : ?>
 
-					<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 mb-10">
+					<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
 						<?php while ( have_posts() ) : the_post(); ?>
 							<?php get_template_part( 'template-parts/content/content', 'excerpt' ); ?>
 						<?php endwhile; ?>

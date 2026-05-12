@@ -6,6 +6,7 @@
  *
  * @package mayasarji
  */
+defined( 'ABSPATH' ) || exit;
 
 if ( ! defined( 'MAYASARJI_VERSION' ) ) {
 	/*
