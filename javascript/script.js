@@ -1,3 +1,10 @@
+// Run before DOMContentLoaded to avoid flash
+(function () {
+  if (window.scrollY > 40) {
+    document.getElementById('site-header')?.classList.add('header-scrolled');
+  }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
   const html        = document.documentElement;
   const header      = document.getElementById('site-header');

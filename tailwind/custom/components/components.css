@@ -138,10 +138,6 @@ main {
 	@apply text-sm leading-6 text-white/60;
 }
 
-.ms-footer-widg .ms-link {
-	@apply mb-4 block text-[1.5rem] font-bold tracking-[0.12em] text-white uppercase no-underline;
-}
-
 .ms-btn a,
 .ms-tag-list a,
 .search-submit,
@@ -175,6 +171,10 @@ div.wpforms-container-full button[type="submit"] {
 	@apply text-sm font-normal md:text-base;
 }
 
-/* div.wpforms-container-full input[type="text"] {
-	@apply bg-tertiary;
-} */
+.svg-logo {
+	@apply block w-32 [&_svg]:h-auto [&_svg]:w-full [&_svg]:text-white [&_svg]:transition-opacity [&_svg]:duration-300 hover:[&_svg]:opacity-90;
+}
+
+.ms-mb-3 {
+	@apply mb-3;
+}
