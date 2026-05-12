@@ -5,7 +5,7 @@ main {
 }
 
 .container {
-	@apply mx-auto px-3.5;
+	@apply mx-auto w-full px-3.5 xl:max-w-7xl!;
 }
 
 .flexCenter {
@@ -175,6 +175,6 @@ div.wpforms-container-full button[type="submit"] {
 	@apply text-sm font-normal md:text-base;
 }
 
-div.wpforms-container-full input[type="text"] {
+/* div.wpforms-container-full input[type="text"] {
 	@apply bg-tertiary;
-}
+} */

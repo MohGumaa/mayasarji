@@ -3,29 +3,35 @@
  *
  * These will be added immediately before Tailwind’s `base` layer.
  */
-
+/* =========================
+  MONTSERRAT VARIABLE
+========================= */
 @font-face {
-	font-family: "Inter";
+	font-family: "Montserrat";
+	src: url("assets/fonts/montserrat/Montserrat-VariableFont_wght.ttf")
+		format("truetype");
 	font-weight: 100 900;
-	font-display: swap;
 	font-style: normal;
-	src: url("assets/fonts/inter/Inter-VariableFont_slnt,wght.woff2")
-		format("woff2");
+	font-display: swap;
 }
 
-/* 
-	// <weight>: Use a value from 100 to 900
-// <uniquifier>: Use a unique and descriptive class name
-.playfair-display-<uniquifier> {
-  font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-} */
+/* =========================
+  CENTURY GOTHIC
+========================= */
 
-/* .montserrat-<uniquifier> {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-} */
+@font-face {
+	font-family: "Century Gothic";
+	src: url("assets/fonts/century-gothic/centurygothic.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Century Gothic";
+	src: url("assets/fonts/century-gothic/centurygothic_bold.ttf")
+		format("truetype");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}

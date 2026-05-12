@@ -9,6 +9,7 @@
 defined( 'ABSPATH' ) || exit;
 get_header();
 
+$tagline     = get_bloginfo('description');
 $banner = get_theme_file_uri( 'assets/images/banner-1.webp' );
 ?>
 
@@ -21,11 +22,11 @@ $banner = get_theme_file_uri( 'assets/images/banner-1.webp' );
 		<div class="container text-center relative z-50">
 			
 			<p class="text-sky-400 text-sm tracking-[0.3em] uppercase mb-3">
-				<?php esc_html_e( 'Media Blog', 'mayasarji' ); ?>
+				<?php echo esc_html($tagline); ?>
 			</p>
 
 			<h1 class="page-title page-title-xl">
-				<?php the_archive_title(); ?>
+				<?php echo single_term_title('', false); ?>
 			</h1>
 			
 			<?php if ( get_the_archive_description() ) : ?>
@@ -42,7 +43,7 @@ $banner = get_theme_file_uri( 'assets/images/banner-1.webp' );
 
 			<?php if ( have_posts() ) : ?>
 
-				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 mb-10">
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
 					<?php while ( have_posts() ) : the_post(); ?>
 						<?php get_template_part( 'template-parts/content/content', 'excerpt' ); ?>
 					<?php endwhile; ?>

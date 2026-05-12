@@ -24,8 +24,8 @@
 	/**
 	 * Add your theme below:
 	 */
-	--font-playfair: "Playfair Display", serif;
+
+	/* Custom fonts */
 	--font-montserrat: "Montserrat", sans-serif;
-	--font-cormorant: "Cormorant Garamond", Georgia, serif;
-	--font-dm: "DM Sans", sans-serif;
+	--font-century: "Century Gothic", sans-serif;
 }
