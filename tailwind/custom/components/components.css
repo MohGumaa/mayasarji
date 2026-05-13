@@ -178,3 +178,7 @@ div.wpforms-container-full button[type="submit"] {
 .ms-mb-3 {
 	@apply mb-3;
 }
+
+.home-social .ms-social-link {
+	@apply h-10 w-10 rounded-full border border-sky-400/20 text-white/80 transition-all duration-300 hover:border-sky-400 hover:bg-sky-400/8 hover:text-sky-400;
+}
