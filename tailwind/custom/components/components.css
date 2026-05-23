@@ -50,7 +50,7 @@ main {
 }
 
 .header-scrolled {
-	@apply bg-[rgba(13,13,13,0.93)] ring-1 ring-white/10 backdrop-blur-[14px];
+	@apply bg-[#0B0B0F]/90 ring-1 ring-white/5 backdrop-blur-xl;
 }
 
 .nav-open span {
@@ -95,7 +95,7 @@ main {
 }
 
 .section-banner {
-	@apply relative z-1 min-h-90 w-screen snap-center overflow-x-hidden bg-black bg-cover bg-center bg-no-repeat after:absolute after:top-0 after:left-0 after:h-full after:w-full after:bg-black/80 after:content-[''] md:min-h-105 lg:min-h-117.5;
+	@apply relative z-1 min-h-90 w-screen snap-center overflow-x-hidden bg-black bg-cover bg-center bg-no-repeat after:absolute after:top-0 after:left-0 after:h-full after:w-full after:bg-black/50 after:content-[''] md:min-h-105 md:after:bg-black/80 lg:min-h-117.5;
 }
 
 .section-banner-dark {
@@ -150,12 +150,16 @@ main {
 .ms-tag-list a,
 .search-submit,
 .ms-btn-action a,
+.ms-btn-action-link,
 .article-footer-meta a {
-	@apply border border-dashed border-sky-300/30 bg-sky-400/10 px-5 py-2 font-semibold text-sky-400 no-underline transition-all duration-250 hover:bg-sky-400/15 hover:text-sky-400;
+	@apply rounded-full border border-dashed border-sky-300/30 bg-sky-400/10 px-5 py-2 font-semibold text-sky-400 uppercase no-underline transition-all duration-250 hover:bg-sky-400/15 hover:text-sky-400;
 }
 
-.ms-btn-action a {
-	@apply text-[0.75rem] tracking-[0.14em] after:hidden;
+.ms-btn a,
+.ms-tag-list a,
+.ms-btn-action a,
+.ms-btn-action-link {
+	@apply text-[0.75rem] tracking-[0.075rem] after:hidden;
 }
 
 .ms-btn {

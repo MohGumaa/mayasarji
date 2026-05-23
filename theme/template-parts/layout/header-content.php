@@ -59,6 +59,10 @@ defined( 'ABSPATH' ) || exit;
 			?>
 		</nav>
 
+		<a href="https://wa.me/971506264134?text=Hello%20I%20would%20like%20to%20contact%20you" class="ms-btn-action-link hidden lg:block">
+			book a session
+		</a>
+
 		<button 
 			id="hamburger" 
 			class="lg:hidden flex flex-col justify-center items-end gap-1.25 w-6 h-6 cursor-pointer bg-transparent border-0 outline-0 group" 
