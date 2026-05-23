@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
 		<a 
 			href="<?php echo esc_url( home_url( '/' ) ); ?>" 
 			rel="home" 
-			class="svg-logo"
+			class="ms-logo"
 			aria-label="<?php bloginfo( 'name' ); ?>"
 		>
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 793.47 388.75" fill="currentColor">

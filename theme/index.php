@@ -31,26 +31,26 @@ $is_front    = is_front_page();
 				<?php if ( $is_front ) : ?>
 
 					<p class="text-sky-400 text-sm tracking-[0.3em] uppercase mb-3">
-						<?php echo esc_html($tagline); ?>
+						<?php echo esc_html($site_name); ?>
 					</p>
 
 					<h1 class="page-title page-title-xl">
-						<?php echo esc_html($site_name); ?>
+						<?php echo esc_html($tagline); ?>
 					</h1>
 
 				<?php else : ?>
 
-					<p class="text-sky-400 text-lg tracking-[0.3em] uppercase mb-1">
-						<?php echo esc_html($site_name); ?>
-					</p>
-
 					<p class="text-sky-400 text-sm tracking-[0.3em] uppercase mb-3">
-						<?php echo esc_html($tagline); ?>
+						<?php echo esc_html($site_name); ?>
 					</p>
 
 					<h1 class="page-title page-title-xl">
 						<?php single_post_title(); ?>
 					</h1>
+					
+					<p class="text-sm md:text-base lg:text-xl max-w-2xl mx-auto text-foreground">
+						<?php echo esc_html($tagline); ?>
+					</p>
 
 				<?php endif; ?>
 

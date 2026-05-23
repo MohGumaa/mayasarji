@@ -98,6 +98,10 @@ main {
 	@apply after:bg-black/95;
 }
 
+.thanks-banner {
+	@apply after:bg-black/50;
+}
+
 .section-heading {
 	@apply text-foreground mb-6 text-4xl font-bold capitalize sm:text-5xl md:text-6xl;
 }
@@ -171,8 +175,12 @@ div.wpforms-container-full button[type="submit"] {
 	@apply text-sm font-normal md:text-base;
 }
 
-.svg-logo {
+.ms-logo {
 	@apply block w-32 [&_svg]:h-auto [&_svg]:w-full [&_svg]:text-white [&_svg]:transition-opacity [&_svg]:duration-300 hover:[&_svg]:opacity-90;
+}
+
+.ms-svg-icon {
+	@apply block h-auto text-white md:w-44 lg:w-52;
 }
 
 .ms-mb-3 {
