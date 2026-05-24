@@ -34,7 +34,7 @@ $search_query = get_search_query();
 			</div>
 		</header>
 
-		<section class="py-16">
+		<section class="py-16 ms-reveal">
 			<div class="container">
 
 				<?php if ( have_posts() ) : ?>

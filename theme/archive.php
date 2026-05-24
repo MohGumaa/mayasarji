@@ -38,7 +38,7 @@ $banner = get_theme_file_uri( 'assets/images/banner-1.webp' );
 		</div>
 	</header>
 
-	<section class="py-16">
+	<section class="py-16 ms-reveal">
 		<div class="container">
 
 			<?php if ( have_posts() ) : ?>

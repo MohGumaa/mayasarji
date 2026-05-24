@@ -43,7 +43,7 @@ $ms_page_subtitle = get_field('page_subtitle');
 	</div>
 </header>
 
-<section class="py-16 mb-10 lg:mb-16">
+<section class="py-16 mb-10 lg:mb-16 ms-reveal">
 	<div class="container space-y-2">
 
 		<div class="ms-service-card group ms-reveal">

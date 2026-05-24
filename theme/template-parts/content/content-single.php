@@ -14,7 +14,7 @@ $featured_img_url = has_post_thumbnail()
 	: get_theme_file_uri( 'assets/images/banner-1.webp' );
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('ms-reveal'); ?>>
 
 	<header 
 		class="entry-header section-banner shadow-section section-hero py-16 lg:py-40 flexCenter flex-col"
