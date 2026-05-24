@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.12 });
   
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  document.querySelectorAll('.ms-reveal').forEach(el => observer.observe(el));
 
   function brandCard(brand) {    
     const iconPath = `${THEME_CONFIG.assetsUrl}/assets/icon/${brand.icon}.webp`;

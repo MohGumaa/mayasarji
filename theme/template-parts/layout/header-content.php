@@ -8,7 +8,7 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<header id="site-header" class="fixed top-0 left-0 right-0 z-50 h-18 transition-all duration-400">
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 h-20 transition-all duration-500">
 	<div class="container flex items-center justify-between h-full">
 
 		<a 

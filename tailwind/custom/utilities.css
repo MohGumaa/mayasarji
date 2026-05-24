@@ -48,25 +48,32 @@
 		inset -60px -60px 160px #000;
 }
 
+.text-gradient-accent {
+	-webkit-text-fill-color: transparent;
+	background: linear-gradient(135deg, #f5f5f5, #00bcff);
+	-webkit-background-clip: text;
+	background-clip: text;
+}
+
 /* Scroll reveal */
-.reveal {
+.ms-reveal {
 	opacity: 0;
 	transform: translateY(28px);
 	transition:
 		opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
 		transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.reveal.visible {
+.ms-reveal.visible {
 	opacity: 1;
 	transform: translateY(0);
 }
-.reveal-d1 {
+.ms-reveal-d1 {
 	transition-delay: 0.12s;
 }
-.reveal-d2 {
+.ms-reveal-d2 {
 	transition-delay: 0.24s;
 }
-.reveal-d3 {
+.ms-reveal-d3 {
 	transition-delay: 0.38s;
 }
 

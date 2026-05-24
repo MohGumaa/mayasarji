@@ -1,7 +1,7 @@
 <?php
 /**
- * The template for displaying front page
- *
+ * Template Name: Full Screen Page
+ * 
  * @package mayasarji
  */
 
@@ -15,7 +15,7 @@ get_header();
 		<?php
 			while ( have_posts() ) :
 				the_post();
-				get_template_part( 'template-parts/content/content', 'front' );
+				get_template_part( 'template-parts/content/content-full', 'screen' );
 			endwhile;
 		?>
 	</main>

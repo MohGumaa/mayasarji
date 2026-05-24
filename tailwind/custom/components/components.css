@@ -26,7 +26,7 @@ main {
 }
 
 .sub-menu a {
-	@apply hover:text-sky-400;
+	@apply text-white/70 hover:text-white;
 }
 
 .nav-menu a {
@@ -50,7 +50,7 @@ main {
 }
 
 .header-scrolled {
-	@apply bg-[#0B0B0F]/90 ring-1 ring-white/5 backdrop-blur-xl;
+	@apply bg-ms/90 ring-1 ring-white/5 backdrop-blur-xl;
 }
 
 .nav-open span {
@@ -95,11 +95,19 @@ main {
 }
 
 .section-banner {
-	@apply relative z-1 min-h-90 w-screen snap-center overflow-x-hidden bg-black bg-cover bg-center bg-no-repeat after:absolute after:top-0 after:left-0 after:h-full after:w-full after:bg-black/50 after:content-[''] md:min-h-105 md:after:bg-black/80 lg:min-h-117.5;
+	@apply relative z-1 min-h-90 w-screen snap-center overflow-x-hidden bg-black bg-cover bg-center bg-no-repeat after:absolute after:top-0 after:left-0 after:h-full after:w-full after:bg-black/25 after:content-[''] md:min-h-105 md:after:bg-black/80 lg:min-h-117.5;
 }
 
 .section-banner-dark {
 	@apply after:bg-black/95;
+}
+
+.section-fullScreen {
+	@apply min-h-[55vh] lg:min-h-[60vh];
+}
+
+.section-banner-lg {
+	@apply max-md:after:bg-black/65;
 }
 
 .thanks-banner {
@@ -193,4 +201,64 @@ div.wpforms-container-full button[type="submit"] {
 
 .ms-mb-3 {
 	@apply mb-3;
+}
+
+.ms-service-card {
+	@apply bg-ms/90 hover:shadow-ms hover:bg-ms-dark relative overflow-hidden rounded-2xl border border-white/6 hover:border-sky-300/30;
+}
+
+.ms-service-grid {
+	@apply grid grid-cols-1 gap-0 lg:grid-cols-12;
+}
+
+.ms-service-image-wrapper {
+	@apply relative min-h-91.75 overflow-hidden md:col-span-3 lg:col-span-4;
+}
+
+.ms-service-image {
+	@apply h-full w-full object-cover transition-transform duration-700 group-hover:scale-105;
+}
+
+.ms-service-overlay {
+	@apply absolute inset-0 bg-linear-to-t from-[#111]/80 to-transparent lg:bg-none;
+}
+
+.ms-service-content {
+	@apply flex flex-col justify-center gap-4 p-8 md:col-span-9 md:p-10 lg:col-span-8;
+}
+
+.ms-service-header {
+	@apply flex items-center justify-between;
+}
+
+.ms-service-category {
+	@apply flex items-center gap-3;
+}
+
+.ms-service-icon-svg {
+	@apply text-white/40 transition-colors duration-300 group-hover:text-sky-400;
+}
+
+.ms-service-icon {
+	@apply flex size-10 items-center justify-center rounded-xl border border-white/10 transition-all duration-300 group-hover:border-sky-400/40;
+}
+
+.ms-service-label {
+	@apply text-xs tracking-widest text-white/30 uppercase;
+}
+
+.ms-service-title {
+	@apply text-3xl font-bold md:text-4xl;
+}
+
+.ms-service-description {
+	@apply max-w-xl text-sm leading-relaxed text-white/60;
+}
+
+.ms-service-tags {
+	@apply mt-2 flex flex-wrap gap-2;
+}
+
+.ms-service-tag {
+	@apply rounded-full border border-white/8 px-3 py-1 text-xs tracking-wider text-white/60 transition-all duration-300 group-hover:border-sky-400/20 group-hover:text-white/80;
 }
