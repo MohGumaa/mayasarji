@@ -1,7 +1,7 @@
 <?php
 /**
- * Template Name: About Page
- * 
+ * The template for displaying front page
+ *
  * @package mayasarji
  */
 
@@ -15,7 +15,7 @@ get_header();
 		<?php
 			while ( have_posts() ) :
 				the_post();
-				get_template_part( 'template-parts/content/content', 'about' );
+				get_template_part( 'template-parts/content/content', 'front' );
 			endwhile;
 		?>
 	</main>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Banner Ending Page
+//  * Template Name: Banner Ending Page
  * 
  * @package mayasarji
  */

@@ -13,8 +13,8 @@ $featured_img_url = has_post_thumbnail()
 	: get_theme_file_uri('assets/images/banner-1.webp');
 
 // Get ACF fields
-$page_eyebrow  = get_field('page_eyebrow');
-$page_subtitle = get_field('page_subtitle');
+$ms_page_title_wysiwyg = get_field('page_title_wysiwyg');
+$ms_page_subtitle = get_field('page_subtitle');
 ?>
 
 <header 
@@ -30,13 +30,13 @@ $page_subtitle = get_field('page_subtitle');
 			</span>
 		</div>
 
-		<h1 class="text-6xl md:text-8xl font-bold leading-[0.95] tracking-tight mb-8 max-w-xl">
-			The Art <br/> of <span class="text-gradient-accent">Sound</span>
-		</h1>
+		<?php if ( ! empty( $ms_page_title_wysiwyg ) ) : ?>
+			<?php echo wp_kses_post( $ms_page_title_wysiwyg ); ?>
+		<?php endif; ?>
 
-		<?php if ( $page_subtitle ) : ?>
+		<?php if ( ! empty( $ms_page_subtitle ) ) : ?>
 			<p class="text-white/60 text-lg leading-relaxed max-w-xl">
-				<?php echo esc_html( $page_subtitle ); ?>
+				<?php echo esc_html( $ms_page_subtitle ); ?>
 			</p>
 		<?php endif; ?>
 
