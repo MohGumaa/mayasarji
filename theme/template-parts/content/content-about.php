@@ -44,7 +44,7 @@ $image = get_field('right_side_image');
 	</div>
 </header>
 
-<section class="py-16 ms-reveal">
+<section class="pt-16 pb-24 lg:pb-36 ms-reveal">
 	<div class="container grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<div <?php mayasarji_content_class( 'entry-content text-[15px] text-white/60' ); ?>>

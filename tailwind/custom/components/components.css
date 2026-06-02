@@ -123,7 +123,7 @@ main {
 }
 
 .section-sub-heading {
-	@apply text-base leading-relaxed md:text-lg;
+	@apply text-foreground/80 text-base leading-relaxed md:text-lg;
 }
 
 .section-label {

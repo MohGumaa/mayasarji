@@ -373,7 +373,7 @@ $ms_page_subtitle = get_field('page_subtitle');
 					</h2>
 
 					<p class="ms-service-description">
-						<?php esc_html_e( 'A comprehensive sonic identity system for your brand. Maya develops the full architecture of how your brand sounds — from tone guidelines to talent casting and ongoing audio direction.', 'mayasarji' );?>
+						<?php esc_html_e( 'A comprehensive sonic identity system for your brand. Maya develops the full architecture of how your brand sounds from tone guidelines to talent casting and ongoing audio direction.', 'mayasarji' );?>
 					</p>
 
 					<div class="ms-service-tags">

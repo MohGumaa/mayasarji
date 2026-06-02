@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function brandCard(brand) {    
     const iconPath = `${THEME_CONFIG.assetsUrl}/assets/icon/${brand.icon}.webp`;
 
-    return `<div class="shrink-0 bg-white/3 border border-white/8 rounded-xl px-8 py-4 flex items-center justify-center min-w-32 sm:min-w-40 md:min-w-50 hover:border-sky-400/15 hover:bg-white/6 transition-all duration-300 group/item cursor-default">
+    return `<div class="shrink-0 bg-white/3 border border-white/8 rounded-xl px-8 py-4 flex items-center justify-center min-w-36 sm:min-w-40 md:min-w-50 hover:border-sky-400/15 hover:bg-white/6 transition-all duration-300 group/item cursor-default">
       <img src="${iconPath}" alt="${brand.name}" class="h-6 sm:h-8 w-auto object-contain" loading="lazy" />
     </div>`;
   }
@@ -109,15 +109,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const html = [...brands, ...brands, ...brands, ...brands].map(brandCard).join('');
 
     // Use innerHTML instead of outerHTML
-    el.innerHTML = html;
+    el.outerHTML = html;
   }
 
   // Build rows only if elements exist
   if (row1El) {
+    console.log("Row1")
     buildRow(row1El, row1Brands);
   }
 
   if (row2El) {
+    console.log("Row2")
     buildRow(row2El, row2Brands);
   }
 
