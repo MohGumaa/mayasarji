@@ -98,6 +98,10 @@ main {
 	@apply text-foreground line-clamp-2 text-sm;
 }
 
+.film-grain {
+	@apply relative z-1 overflow-hidden after:pointer-events-none after:absolute after:top-0 after:left-0 after:z-10 after:h-full after:w-full after:opacity-[0.03];
+}
+
 .section-banner {
 	@apply relative z-1 min-h-90 w-screen snap-center overflow-x-hidden bg-black bg-cover bg-center bg-no-repeat after:absolute after:top-0 after:left-0 after:h-full after:w-full after:bg-black/25 after:content-[''] md:min-h-105 md:after:bg-black/80 lg:min-h-117.5;
 }
@@ -182,13 +186,53 @@ main {
 	@apply h-9 w-9 rounded-full border border-white/10 text-white/60 transition-all duration-300 hover:border-sky-400 hover:text-sky-400;
 }
 
-div.wpforms-container-full input:not(.search-submit),
+.wpforms-container .wpforms-form .wpforms-field-label {
+	@apply text-foreground/40 text-xs font-medium tracking-widest uppercase;
+}
+
+div.wpforms-container-full input:not(.search-submit, [type="radio"]),
 div.wpforms-container-full textarea {
-	@apply w-full py-6;
+	@apply text-foreground placeholder:text-foreground/20 h-auto w-full rounded-xl border border-white/8 bg-white/3 px-4 py-3.5 text-sm transition-all duration-300 focus:border-sky-400/40 focus:bg-sky-400/3 focus:outline-none;
 }
 
 div.wpforms-container-full button[type="submit"] {
-	@apply h-auto w-full py-4;
+	@apply shadow-luxury-glow text-background! h-auto w-full rounded-full bg-sky-400! px-10 py-4 text-sm font-semibold tracking-widest uppercase transition-all duration-300 hover:bg-sky-400/90 sm:w-auto;
+}
+
+div.wpforms-container-full .wpforms-field.wpforms-field-radio ul {
+	@apply flex flex-wrap items-center gap-2;
+}
+
+div.wpforms-container-full .wpforms-field.wpforms-field-radio ul li {
+	@apply hover:text-foreground/70 rounded-full border border-white/10 px-4 py-2 transition-all duration-300 hover:border-sky-400/30;
+}
+
+div.wpforms-container-full
+	.wpforms-field.wpforms-field-radio
+	ul
+	li
+	input
+	+ label {
+	@apply text-foreground/50 group-hover:text-foreground/70 p-0 text-xs font-medium tracking-wider;
+}
+
+div.wpforms-container-full .wpforms-field.wpforms-field-radio ul li input {
+	@apply hidden;
+}
+
+div.wpforms-container-full
+	.wpforms-field.wpforms-field-radio
+	ul
+	.wpforms-selected {
+	@apply bg-sky-400;
+}
+
+div.wpforms-container-full
+	.wpforms-field.wpforms-field-radio
+	ul
+	.wpforms-selected
+	label {
+	@apply text-background;
 }
 
 ::placeholder {
@@ -265,4 +309,61 @@ div.wpforms-container-full button[type="submit"] {
 
 .ms-service-tag {
 	@apply rounded-full border border-white/8 px-3 py-1 text-xs tracking-wider text-white/60 transition-all duration-300 group-hover:border-sky-400/20 group-hover:text-white/80;
+}
+
+.ms-space-y-6 {
+	@apply space-y-6;
+}
+
+.ms-contact-item {
+	@apply flex items-start gap-4;
+}
+
+.ms-icon-box {
+	@apply flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/10;
+}
+
+.ms-label {
+	@apply text-foreground/30 mb-1 text-xs tracking-widest uppercase;
+}
+
+.ms-value {
+	@apply text-foreground/80 text-sm;
+}
+
+a.ms-value {
+	@apply text-foreground/80!;
+}
+
+.ms-note {
+	@apply text-foreground/40 text-xs;
+}
+
+.ms-contact-info {
+	@apply border-t border-white/6 pt-8;
+}
+
+.ms-contact-heading {
+	@apply text-foreground/30 mb-5 text-xs tracking-widest uppercase;
+}
+
+.ms-space-y-10 {
+	@apply space-y-10;
+}
+
+.ms-contact-info .ms-social-link {
+	@apply text-foreground/40!;
+}
+
+a.ms-value,
+.ms-contact-info .ms-social-link {
+	@apply hover:text-sky-400!;
+}
+
+.ms-voice-img {
+	@apply after:from-background relative hidden aspect-4/5 overflow-hidden rounded-2xl after:absolute after:inset-0 after:bg-linear-to-t after:via-transparent after:to-transparent lg:block;
+}
+
+.ms-voice-img img {
+	@apply aspect-4/5 object-cover;
 }

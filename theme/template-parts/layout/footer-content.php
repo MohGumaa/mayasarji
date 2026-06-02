@@ -10,18 +10,18 @@ defined( 'ABSPATH' ) || exit;
 
 <footer 
 	id="colophon" 
-	class="stripe-texture overflow-hidden"
+	class="film-grain overflow-hidden"
 >
 
 	<?php if ( is_active_sidebar( 'ms-footer-widget' ) ): ?>
-		<div class="py-16 border-t border-white/6">
+		<div class="py-16 border-t border-white/6 relative z-20">
 			<div class="container grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
 				<?php dynamic_sidebar( 'ms-footer-widget' ); ?>
 			</div>
 		</div>
 	<?php endif;?>
 
-	<div class="border-t border-white/6 py-9">
+	<div class="border-t border-white/6 py-9 relative z-20">
 		<div class="container flex flex-col md:flex-row items-center justify-between gap-2 text-sm text-foreground">
 			<p class="text-center md:text-left">
 				&copy; <?php echo date('Y');?> 

@@ -13,7 +13,7 @@ $voice_section = get_theme_file_uri( 'assets/images/img-0.webp' );
 
 <section 
   id="hero" 
-  class="stripe-texture shadow-hero w-full h-[90svh] min-h-150 overflow-hidden relative"
+  class="film-grain shadow-hero w-full h-[60svh] min-h-150 overflow-hidden relative"
 >
   <div class="container">
     Hero

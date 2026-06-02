@@ -35,4 +35,5 @@
 
 	/* Shadow */
 	--shadow-ms: 0 0 40px #00bcff14;
+	--shadow-luxury-glow: 0 0 40px #00bcff26, 0 0 80px #00bcff0d;
 }
