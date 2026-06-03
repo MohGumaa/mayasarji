@@ -186,6 +186,14 @@ main {
 	@apply h-9 w-9 rounded-full border border-white/10 text-white/60 transition-all duration-300 hover:border-sky-400 hover:text-sky-400;
 }
 
+div.wpforms-container-full {
+	@apply mt-0;
+}
+
+.wpforms-container .wpforms-field-text:first-of-type {
+	@apply pt-0;
+}
+
 .wpforms-container .wpforms-form .wpforms-field-label {
 	@apply text-foreground/40 text-xs font-medium tracking-widest uppercase;
 }
@@ -252,7 +260,7 @@ div.wpforms-container-full
 }
 
 .ms-service-card {
-	@apply bg-ms/90 hover:shadow-ms hover:bg-ms-dark relative overflow-hidden rounded-2xl border border-white/6 hover:border-sky-300/30;
+	@apply hover:shadow-ms hover:bg-ms-dark relative overflow-hidden rounded-2xl border border-white/6 bg-black/70 hover:border-sky-300/30;
 }
 
 .ms-service-grid {
@@ -340,7 +348,7 @@ a.ms-value {
 }
 
 .ms-contact-info {
-	@apply border-t border-white/6 pt-8;
+	@apply border-t border-white/6 pt-8 max-md:mb-3!;
 }
 
 .ms-contact-heading {

@@ -54,6 +54,10 @@
 	transition-delay: 0.38s;
 }
 
+.ms-reveal-d4 {
+	transition-delay: 0.52s;
+}
+
 .animate-marquee {
 	animation-duration: 35s;
 	animation-timing-function: linear;
