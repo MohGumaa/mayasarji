@@ -46,7 +46,7 @@ $ms_page_subtitle = get_field('page_subtitle');
 <section class="py-16 mb-10 lg:mb-16 ms-reveal">
 	<div class="container space-y-2">
 
-		<div class="ms-service-card group ms-reveal">
+		<div id="advertising" class="ms-service-card ms-anchor-target group ms-reveal">
 			<div class="ms-service-grid">
 
 				<div class="ms-service-image-wrapper lg:order-last">
@@ -102,7 +102,7 @@ $ms_page_subtitle = get_field('page_subtitle');
 			</div>
 		</div>
 
-		<div class="ms-service-card group ms-reveal">
+		<div id="enterprise" class="ms-service-card ms-anchor-target group ms-reveal">
 			<div class="ms-service-grid">
 
 				<div class="ms-service-image-wrapper">
@@ -161,7 +161,7 @@ $ms_page_subtitle = get_field('page_subtitle');
 			</div>
 		</div>
 
-		<div class="ms-service-card group ms-reveal">
+		<div id="events" class="ms-service-card ms-anchor-target group ms-reveal">
 			<div class="ms-service-grid">
 
 				<div class="ms-service-image-wrapper lg:order-last">
@@ -216,7 +216,7 @@ $ms_page_subtitle = get_field('page_subtitle');
 			</div>
 		</div>
 
-		<div class="ms-service-card group ms-reveal">
+		<div id="media" class="ms-service-card ms-anchor-target group ms-reveal">
 			<div class="ms-service-grid">
 
 				<div class="ms-service-image-wrapper">
@@ -270,7 +270,7 @@ $ms_page_subtitle = get_field('page_subtitle');
 			</div>
 		</div>
 
-		<div class="ms-service-card group ms-reveal">
+		<div id="podcasting" class="ms-service-card ms-anchor-target group ms-reveal">
 			<div class="ms-service-grid">
 
 				<div class="ms-service-image-wrapper lg:order-last">
@@ -328,7 +328,7 @@ $ms_page_subtitle = get_field('page_subtitle');
 			</div>
 		</div>
 
-		<div class="ms-service-card group ms-reveal">
+		<div id="strategy" class="ms-service-card ms-anchor-target group ms-reveal">
 			<div class="ms-service-grid">
 
 				<div class="ms-service-image-wrapper">
