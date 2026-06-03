@@ -11,6 +11,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const nav         = document.getElementById('site-navigation');
   const hamburger   = document.getElementById('hamburger');
 
+  // HERO SLIDES
+  // const heroSlides = [
+  //   {
+  //     image: "/hero-voice-artist.webp",
+  //     label: "Voice Artist"
+  //   },
+  //   {
+  //     image: "/speaking-event.webp",
+  //     label: "Media Personality"
+  //   },
+  //   {
+  //     image: "/coaching-session.webp",
+  //     label: "Communication Coach"
+  //   },
+  //   {
+  //     image: "/podcast-studio.webp",
+  //     label: "Podcast Producer"
+  //   }
+  // ];
+  // let currentSlide = 0;
+  // const slideLabel = document.getElementById("slideLabel");
+  
+  // heroSlides.forEach((slide, index) => {
+
+  // })
+
   // BRAND MARQUEE - ONLY WHERE ELEMENTS EXIST
   // ============================================
   const row1El = document.getElementById('row1');

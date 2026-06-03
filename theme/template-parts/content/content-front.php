@@ -13,10 +13,76 @@ $voice_section = get_theme_file_uri( 'assets/images/img-0.webp' );
 <!-- ══════ HERO ══════ -->
 <section 
   id="hero" 
-  class="film-grain shadow-hero w-full h-[80svh] min-h-150 overflow-hidden relative"
+  class="relative bg-black/30 w-full h-[98svh] overflow-hidden"
 >
-  <div class="container">
-    Hero
+  <!-- Background Slides -->
+  <div class="ms-slides" id="slides">
+    <div class="absolute inset-0">
+      
+    </div>
+  </div>
+
+  <div class="container h-full">
+    <div class="ms-hero-content">
+      <div class="ms-section-label ms-reveal mb-8!">
+        <div class="ms-section-label-line"></div>
+        <span id="slideLabel" class="ms-section-label-text">
+          <?php esc_html_e( 'Voice Artist', 'mayasarji' ); ?>
+        </span>
+      </div>
+      <h1 class="ms-hero-title ms-reveal ms-reveal-d1">
+        <span class="block">
+          <?php esc_html_e( 'Your Voice.', 'mayasarji' ); ?>
+        </span>
+        <span class="text-gradient-accent block">
+          <?php esc_html_e( 'Your Power.', 'mayasarji' ); ?>
+        </span>
+        <span class="text-foreground/30 block">
+          <?php esc_html_e( 'Your Story.', 'mayasarji' ); ?>
+        </span>
+      </h1>
+      <p class="ms-hero-description ms-reveal ms-reveal-d2">
+        <?php esc_html_e( 'Award-winning voice artist, media personality, and communication coach crafting unforgettable audio experiences for the world\'s most discerning brands.', 'mayasarji' ); ?>
+      </p>
+      <div class="ms-hero-buttons ms-reveal ms-reveal-d3">
+        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact' ) ) ); ?>" class="group ms-btn ms-btn-primary">
+          <?php esc_html_e( 'Book a Session', 'mayasarji' );?>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'our-services' ) ) ); ?>" class="group ms-btn ms-btn-secondary">
+          <?php esc_html_e( 'Explore Work', 'mayasarji' );?>
+          <div class="flexCenter rounded-full border border-white/20 group-hover:border-sky-400/40 transition-colors duration-300 size-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play ml-0.5" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path></svg>
+          </div>
+        </a>
+      </div>
+      <div class="ms-stats ms-reveal ms-reveal-d4">
+        <div class="ms-stats-item">
+          <span class="ms-stats-value">
+            <?php esc_html_e( '500+', 'mayasarji' );?>
+          </span>
+          <span class="ms-stats-label">
+            <?php esc_html_e( 'Brands Voiced', 'mayasarji' );?>
+          </span>
+        </div>
+        <div class="ms-stats-item">
+          <span class="ms-stats-value">
+            <?php esc_html_e( '15+', 'mayasarji' );?>
+          </span>
+          <span class="ms-stats-label">
+            <?php esc_html_e( 'Years Experience', 'mayasarji' );?>
+          </span>
+        </div>
+        <div class="ms-stats-item">
+          <span class="ms-stats-value">
+            <?php esc_html_e( '50+', 'mayasarji' );?>
+          </span>
+          <span class="ms-stats-label">
+            <?php esc_html_e( 'Awards', 'mayasarji' );?>
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
