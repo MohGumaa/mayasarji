@@ -42,7 +42,7 @@ $page_subtitle = get_field('page_subtitle');
 	</div>
 </header>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('py-16 ms-reveal'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('py-16'); ?>>
 	<div class="container">
 		<div <?php mayasarji_content_class( 'entry-content' ); ?>>
 			<?php the_content();?>

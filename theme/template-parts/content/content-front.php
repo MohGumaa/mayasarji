@@ -538,6 +538,10 @@ $voice_section = get_theme_file_uri( 'assets/images/img-0.webp' );
       </span>
     </div>
 
+    <div <?php mayasarji_content_class( 'entry-content mb-20' ); ?>>
+			<?php the_content();?>
+		</div>
+
     <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'our-services' ) ) ); ?>" class="ms-action-link group">
       <?php esc_html_e( 'View All Projects', 'mayasarji' );?>
       <svg 

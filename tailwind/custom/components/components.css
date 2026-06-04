@@ -487,7 +487,7 @@ a.ms-value,
 	@apply mb-16 flex flex-wrap items-center gap-4;
 }
 
-.ms-btn {
+.ms-button {
 	@apply inline-flex h-13 items-center gap-3 rounded-full px-8 py-4 text-sm font-semibold tracking-widest uppercase transition-all duration-300;
 }
 
@@ -559,11 +559,16 @@ a.ms-value,
 	@apply h-full w-0 bg-sky-400 transition-all duration-300 ease-linear;
 }
 
-/* ── Dots ──────────────────────────── */
+/* ── Dots ── */
 .ms-dot {
 	@apply size-1.5 cursor-pointer rounded-full border-none bg-white/15 transition-all duration-400 ease-in-out;
 }
 
 .ms-dot.active {
 	@apply w-8 bg-sky-400;
+}
+
+/* ── Home Hero Section ── */
+.home-hero-section {
+	@apply after:pointer-events-none after:absolute after:inset-0 after:z-50 after:content-[''];
 }
