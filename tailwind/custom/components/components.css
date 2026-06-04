@@ -457,6 +457,7 @@ a.ms-value,
 	@apply scroll-mt-32 lg:scroll-mt-40;
 }
 
+/* ── Section label ── */
 .ms-section-label {
 	@apply mb-20 flex items-center gap-3;
 }
@@ -469,8 +470,9 @@ a.ms-value,
 	@apply text-xs font-semibold tracking-[0.3em] text-sky-400 uppercase;
 }
 
+/* ── Hero content layout ── */
 .ms-hero-content {
-	@apply relative z-30 flex h-full max-w-xl flex-col justify-center;
+	@apply relative z-10 flex h-full max-w-xl flex-col justify-center pt-20 pb-24;
 }
 
 .ms-hero-title {
@@ -482,11 +484,11 @@ a.ms-value,
 }
 
 .ms-hero-buttons {
-	@apply mb-16 flex flex-col items-start gap-4 sm:flex-row;
+	@apply mb-16 flex flex-wrap items-center gap-4;
 }
 
 .ms-btn {
-	@apply flex h-13 items-center gap-3 rounded-full px-8 py-4 text-sm font-semibold tracking-widest uppercase transition-all duration-300;
+	@apply inline-flex h-13 items-center gap-3 rounded-full px-8 py-4 text-sm font-semibold tracking-widest uppercase transition-all duration-300;
 }
 
 .ms-btn-primary {
@@ -498,11 +500,15 @@ a.ms-value,
 }
 
 .ms-stats {
-	@apply flex flex-wrap items-center gap-8;
+	@apply flex items-center gap-6;
 }
 
 .ms-stats-item {
-	@apply flex flex-col;
+	@apply flex flex-col gap-1;
+}
+
+.ms-stats-item + .ms-stats-item {
+	@apply border-s border-[rgba(255,255,255,.08)] ps-6;
 }
 
 .ms-stats-value {
@@ -515,4 +521,49 @@ a.ms-value,
 
 .ms-slides {
 	@apply absolute inset-0 bg-red-400 md:left-1/2;
+}
+
+/* ── Slide base ── */
+.ms-slide {
+	@apply pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-1200 ease-(--ease-out-slide);
+}
+
+.ms-slide.active {
+	@apply pointer-events-auto opacity-100;
+}
+
+/* ── Image panel and Gradient overlays by before: & after ── */
+.ms-slide-img {
+	@apply absolute inset-0 before:absolute before:inset-0 before:z-1 before:bg-[linear-gradient(to_right,var(--wp--preset--color--background)_0%,color-mix(in_srgb,var(--wp--preset--color--background)_72%,transparent)_46%,color-mix(in_srgb,var(--wp--preset--color--background)_10%,transparent)_100%)] before:content-[""] after:absolute after:inset-0 after:z-1 after:bg-[linear-gradient(to_top,var(--wp--preset--color--background)_0%,transparent_40%,color-mix(in_srgb,var(--wp--preset--color--background)_20%,transparent)_100%)] after:content-[""] max-md:before:bg-[linear-gradient(to_right,var(--wp--preset--color--background)_0%,color-mix(in_srgb,var(--wp--preset--color--background)_55%,transparent)_100%)] md:left-[42%];
+}
+
+.ms-slide-img img {
+	@apply h-full w-full scale-[1.06] object-cover object-[center_20%] transition-transform duration-8000 ease-in-out;
+}
+
+.ms-slide.active .ms-slide-img img {
+	@apply scale-100;
+}
+
+/* ── Ambient blob ── */
+.ms-blob {
+	@apply pointer-events-none absolute right-0 bottom-0 z-1 h-1/2 w-1/2 bg-[radial-gradient(ellipse_at_70%_70%,color-mix(in_srgb,var(--wp--preset--color--primary)_7%,transparent)_0%,transparent_70%)] blur-[70px];
+}
+
+/* ── Progress bar ── */
+.ms-progress-track {
+	@apply absolute right-0 bottom-0 left-0 z-20 h-0.5 bg-white/6;
+}
+
+.ms-progress-fill {
+	@apply h-full w-0 bg-sky-400 transition-all duration-300 ease-linear;
+}
+
+/* ── Dots ──────────────────────────── */
+.ms-dot {
+	@apply size-1.5 cursor-pointer rounded-full border-none bg-white/15 transition-all duration-400 ease-in-out;
+}
+
+.ms-dot.active {
+	@apply w-8 bg-sky-400;
 }
